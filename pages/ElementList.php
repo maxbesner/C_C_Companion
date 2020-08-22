@@ -18,6 +18,7 @@ class ElementList
         while(!feof($file))
         {
             $name = trim(fgets($file));
+            $symbol = trim(fgets($file));
 
             $line = "boop";
 
@@ -34,7 +35,7 @@ class ElementList
 
             fgets($file);
 
-            $this->elements[$name] = new Element($name, $description, $colour);
+            $this->elements[$name] = new Element($name, $symbol, $description, $colour);
         }
 
 

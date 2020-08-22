@@ -32,20 +32,23 @@ class ActionTemplate extends Template
         $this->textYBottom = 340;
         $this->textFontSize = 18;
 
-        /*
-        $this->template = ".../".$card->getElement()."/".$card->getType();
-        if($card->getRange == null){
-            $this->template .= "/noRange";
+
+        $this->template = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/".$card->getElement().get_class($card);
+
+        if($card->getRange() == null){
+            $this->template .= "NoRange.jpg";
         }
         else{
-            $this->template .= "range";
-        }*/
+            $this->template .= "Range.jpg";
+        }
+
     }
 
     function createTemplate()
     {
         // TODO: Implement createTemplate() method.
-        $destPath = ".../cards/".$this->card->getCode()."jpg";
+        $destPath = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/cardImages/'.$this->card->getId().".jpg";
+        ;
         copy($this->template, $destPath);
         $image = imagecreatefromjpeg($destPath);
 
@@ -53,7 +56,9 @@ class ActionTemplate extends Template
         $this->createElement($image);
         $this->createCost($image);
         $this->createRarity($image);
+        $this->createTextBox($image);
 
+        imagejpeg($image, $destPath);
     }
 
     function printFormattedText(){
@@ -93,18 +98,13 @@ class ActionTemplate extends Template
         imagettftext($image, $this->rarityFontSize, 0, $this->rarityX, $this->rarityY, $color, $this->fontFile, $this->card->getRarity());
     }
 
-    function createTextBox(){
+    function createTextBox($image){
         $text =$this->card->getText();
 
         $fontSizeAndFormattedText = $this->formatText($this->textFontSize, $this->fontFile, $text, $this->textXRight - $this->textXLeft, $this->textYBottom - $this->textYTop);
 
         $currentY = $this->textYTop + $this->pixelBuffer;
 
-
-        $imgPath = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/GoldAction.jpg';
-        $destPath = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/GoldActionTest.jpg';
-        copy($imgPath, $destPath);
-        $image = imagecreatefromjpeg($destPath);
         $color = imagecolorallocate($image, 0, 0, 0);
 
         foreach($fontSizeAndFormattedText['text'] as $clause){
@@ -112,8 +112,6 @@ class ActionTemplate extends Template
                 //$imgPath = $text->getName().'.jpg';
 
                 imagettftext($image, $fontSizeAndFormattedText["fontSize"], 0, $this->textXLeft, $currentY, $color, $this->fontFile, $clause[$i]);
-
-                imagejpeg($image, $destPath);
 
                 $currentY += $this->pixelBuffer;
             }

@@ -229,7 +229,7 @@ $cards = loadCardsFromFile();
 //Adding text to image
 $card = $cards["A23"];
 header("Content-type: image/jpeg");
-$imgPath = 'GoldAction.jpg';
+$imgPath = 'noRange.jpg';
 $image = imagecreatefromjpeg($imgPath);
 $color = imagecolorallocate($image, 0, 0, 0);
 $string = $card->getText()[0];

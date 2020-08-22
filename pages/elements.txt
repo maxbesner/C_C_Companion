@@ -1,4 +1,5 @@
 Gold
+Au
 Radiant and lustrous, Gold Neuro is used to
 cast a wide circle of influence over reality,
 rewarding those who benefit you and punishing those who
@@ -7,6 +8,7 @@ Stop
 #e6e600
 
 Copper
+Cu
 Dynamic and electric, Copper Neuro is used to
 galvanize yourself and your surroundings, allowing
 you to outpace your rivals and overload anyone who
@@ -15,6 +17,7 @@ Stop
 #cc3300;
 
 Iron
+Fe
 Firm and steadfast, Iron Neuro is used to
 defend and shunt, casting boundless barriers and
 crushing enemies with blunt force
@@ -22,6 +25,7 @@ Stop
 #663300
 
 Calcium
+Ca
 Gentle and fertile, Calcium Neuro is used to
 care for your allies and life at large,
 imbuing the vulnerable with vitality and rewarding
@@ -30,6 +34,7 @@ Stop
 #ffccff
 
 Lead
+Pb
 Dire and shadowy, Lead Neuro is used to protect
 yourself from the wicked world, and then executing
 a well-planned offense from a safe distance
@@ -37,6 +42,7 @@ Stop
 #004d00
 
 Mercury
+Hg
 Mutable and capricious, Mercury Neuro is used to
 transform yourself and anything else you can find lying
 around into the perfect tool for the job at hand,

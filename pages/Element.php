@@ -4,12 +4,14 @@
 class Element
 {
     private $name;
+    private $symbol;
     private $description;
     private $colour;
 
-    public function __construct($name, $description, $colour)
+    public function __construct($name, $symbol, $description, $colour)
     {
         $this->setName($name);
+        $this->setSymbol($symbol);
         $this->setDescription($description);
         $this->setColour($colour);
     }
@@ -22,6 +24,16 @@ class Element
     public function getName()
     {
         return $this->name;
+    }
+
+    public function setSymbol($symbol)
+    {
+        $this->name = $symbol;
+    }
+
+    public function getSymbol()
+    {
+        return $this->symbol;
     }
 
     public function setDescription($description)
