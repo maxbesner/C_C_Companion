@@ -1,0 +1,1655 @@
+Action
+A1
+Jab
+null
+1
+Copper
+Common
+    Deal 1 damage
+End
+Attack
+1
+
+Action
+A2
+Rile
+null
+1
+Copper
+Common
+    Draw a card
+End
+Utility
+null
+
+Action
+A3
+Uppercut
+null
+2
+Copper
+Common
+    Deal 1 damage
+    Flow 3: if this is at least the third card you've played this turn, deal 3 damage instead
+End
+Attack
+1
+
+Action
+A4
+Pumping Blood
+null
+2
+Copper
+Common
+    Your next attack deals +1 damage
+End
+Utility
+null
+
+Action
+A5
+Rush
+null
+2
+Copper
+Common
+    Step 2
+    Deal 1 damage
+End
+Attack
+1
+
+Action
+A6
+Giant Leap
+null
+2
+Copper
+Common
+    Step 3
+End
+Utility
+null
+
+Action
+A7
+Just Getting Started
+null
+2
+Copper
+Common
+    Deal 1 damage
+    Flow 2: Draw a card if this is at least the second card you've played this turn
+End
+Attack
+1
+
+Action
+A8
+Jumping Push
+null
+2
+Copper
+Common
+    Deal 1 damage. Push the target to the hex opposite you, then move onto the square they occupied
+End
+Attack
+1
+
+Action
+A9
+One-Two Punch
+null
+3
+Copper
+Common
+    Deal 1 damage
+    Deal 1 damage
+End
+Attack
+1
+
+Action
+A10
+Copper Terrain
+null
+3
+Copper
+Common
+    This card has no elemental requirement
+    Create a Copper Terrain
+End
+Basic Utility
+1
+
+Action
+A11
+Bloody Mad
+null
+3
+Copper
+Common
+    Deal 1 damage
+    If you have no cards in hand, deal 3 damage instead
+End
+Attack
+1
+
+Action
+A12
+Start the Party
+null
+3
+Copper
+Common
+    Create a Powder Keg
+End
+Utility - Creation
+1
+
+Action
+A13
+Sprint
+null
+3
+Copper
+Common
+    Step 4
+    Copper Bond: Step 5 instead if you play this card on Copper Terrain
+End
+Utility
+null
+
+Action
+A14
+Charge
+null
+4
+Copper
+Common
+    Step 3
+    Deal 2 damage
+End
+Attack
+1
+
+Action
+A15
+Brass Tacks
+null
+4
+Copper
+Common
+    Deal 2 damage
+    Copper Bond: Deal 4 damage instead if you play this card on Copper Terrain
+End
+Attack
+1
+
+Action
+A16
+Ground Pound
+null
+4
+Copper
+Common
+    Deal 1 damage
+    Targeted Terrain becomes Neutral Terrain
+End
+Attack
+1
+
+Action
+A17
+Beeline
+null
+1
+Copper
+Common
+    Step 5
+    Deal 4 damage
+End
+Attack
+1
+
+Action
+A18
+Copper Strike
+null
+4
+Copper
+Common
+    Deal 2 damage
+    Copper Bond: Deal 4 damage instead
+End
+Attack
+1
+
+Action
+A19
+Luminous Blade
+null
+5
+Gold
+Common
+    Deal 3 damage
+End
+Attack
+Longsword
+
+Action
+A20
+Rolling Nova
+null
+7
+Gold
+Common
+    Deal 3 damage
+    Radiance
+End
+Attack
+Radial
+
+Action
+A21
+Luminous Waveform
+null
+5
+Gold
+Common
+    Deal 2 damage
+    Radiance
+End
+Attack
+Wave
+
+Action
+A22
+I Gave You Power
+null
+5
+Gold
+Common
+    Deal 2 damage
+    Target's attacks do +2 damage during their next turn
+End
+Attack
+2
+
+Action
+A23
+Inspiring Barrage
+null
+6
+Gold
+Common
+    Deal 1 damage
+    Radiance
+    Up to one ally draws a card for each enemy hit by this attack
+End
+Attack
+Longsword
+
+Action
+A4
+Vilification
+null
+1
+Gold
+Common
+    Mark the target
+    Radiance
+End
+Utility
+1
+
+Action
+A24
+Motivation
+null
+4
+Gold
+Common
+    Target draws 2 cards
+End
+Utility
+2
+
+Action
+A26
+Lightpocalyse
+null
+10
+Gold
+Common
+    Deal 5 damage
+    Radiance
+End
+Attack
+Honeycomb
+
+Action
+A27
+Big Bang
+null
+10
+Gold
+Common
+    Deal 5 damage
+    Radiance
+End
+Attack
+Double Nova
+
+Action
+A28
+Daring Demonstration
+null
+5
+Gold
+Common
+    Enter the initiative queue
+End
+Utility
+null
+
+Action
+A29
+Gleaming Guidance
+null
+6
+Gold
+Common
+    Target gains +1 to all attacks during their next turn
+    Gold Bond: That ally instead gains +2 to all attacks during their next turn if you play this card on Gold Terrain
+End
+Attack
+1
+
+Action
+A30
+Well of Invigoration
+null
+2
+Gold
+Common
+    Place a shine counter on target terrain
+    Until end of turn, friendly attacks from shining hexes do +1 damage
+End
+Attack
+5
+
+Action
+A31
+Petnapping
+null
+8
+Gold
+Common
+    Gain control of target summon
+End
+Utility
+1
+
+Action
+A32
+Me First
+null
+2
+Gold
+Common
+    Enter the initiative queue
+End
+Utility
+null
+
+Action
+A33
+Encouragement
+null
+3
+Gold
+Common
+    Target's next attack deals +2 damage
+End
+Utility
+2
+
+Action
+A34
+Gold Strike
+null
+4
+Gold
+Common
+    Deal 2 damage
+    Gold Bond: Deal 4 damage instead
+End
+Attack
+1
+
+Action
+A35
+Tentacle Whip
+null
+1
+Mercury
+Common
+    Deal 2 damage
+End
+Attack
+Stretchy 3
+
+Action
+A36
+Shoot or Shove
+null
+5
+Mercury
+Common
+    Deal 2 damage
+    OR
+    Push 3
+End
+Attack/Utility
+3
+
+Action
+A37
+Knowledge or Power
+null
+3
+Mercury
+Common
+    Draw a card
+    OR
+    Deal 2 damage
+End
+Utility/Attack
+1
+
+Action
+A38
+Slap or Wrap
+null
+5
+Mercury
+Common
+    Deal 3 damage
+    OR
+    Deal 2 damage
+End
+Attack
+1 OR Stretchy 3
+
+Action
+A39
+Kraken's Clutch
+null
+7
+Mercury
+Common
+    Deal damage equal to the number of targets this card damages
+End
+Attack
+Stretchy 4
+
+Action
+A40
+Drop of Madness
+null
+4
+Mercury
+Common
+    Deal 1 damage, then the target discards 2 cards
+End
+Attack
+1
+
+Action
+A41
+Mad Insight
+null
+3
+Mercury
+Common
+    Draw a card
+    Mercury Bond: Draw 2 cards instead
+End
+Attack
+1
+
+Action
+A42
+Aura Syphon
+null
+8
+Mercury
+Common
+    Gain control of up to one enchantment enchanting the target
+End
+Utility
+1
+
+Action
+A43
+Mana Dink
+null
+3
+Mercury
+Common
+    The next card you play has no elemental requirements
+End
+Utility
+null
+
+Action
+A44
+Looky Loo
+null
+4
+Mercury
+Common
+    Draw 2 cards
+End
+Utility
+null
+
+Action
+A45
+Rendacle
+null
+6
+Mercury
+Common
+    Deal 2 damag
+    Instead deal 4 damage to all items and armor
+End
+Attack
+Stretchy 4
+
+Action
+A46
+Disrobing Slime
+null
+4
+Mercury
+Common
+    Deal 1 damage
+    Whenever Disrobing Slime deals damage to armor, destroy it
+End
+Attack
+Stretchy 2
+
+Action
+A47
+Mercury Strike
+null
+4
+Mercury
+Common
+    Deal 2 damage
+    Mercury Bond: deal 4 damage instead
+End
+Attack
+1
+
+Action
+A48
+Violent Traige
+null
+4
+Calcium
+Common
+    Deal 2 damage
+    Drain
+End
+Attack
+1
+
+Action
+A49
+Unwilling Transfusion
+null
+7
+Mercury
+Common
+    Deal 3 damage
+    Drain
+End
+Attack
+2
+
+Action
+A50
+Spurn the Wretched
+null
+5
+Calcium
+Common
+    Deal 1 damage
+    Deal 4 damage instead to afflictions and to afflicted targets
+End
+Attack
+1
+
+Action
+Flaying Graft
+null
+6
+Calcium
+Common
+    Deal 2 damage
+    Drain
+    Drain
+End
+Attack
+1
+
+Action
+A52
+Resangiunate
+null
+2
+Calcium
+Common
+    Deal 1 damage
+    Drain
+End
+Attack
+1
+
+Action
+A53
+Tandem Strike
+null
+5
+Calcium
+Common
+    Play Tandem Strike only if you have 2 or more allies adjacent to you
+    Deal 6 damage
+End
+Attack
+2
+
+Action
+A54
+Infused Love
+null
+4
+Calcium
+Common
+    Heal target ally for 3 HP
+    Heal for 5 instead
+End
+Utility
+1
+
+Action
+A55
+Touch of Frailty
+null
+5
+Calcium
+Common
+    Deal 2 damage
+    Target's next attack deals -1 damage
+End
+Attack
+1
+
+Action
+A56
+Recurseon
+null
+8
+Calcium
+Common
+    Target gains control of an affliction afflicting you or an adjacent ally
+End
+Utiltiy
+2
+
+Action
+A57
+Disarm
+null
+3
+Calcium
+Common
+    Target's next attack deals -2 damage
+End
+Utility
+1
+
+Action
+A58
+Gentle Hand
+null
+1
+Calcium
+Common
+    Heal target ally for 1 HP
+End
+Utility
+1
+
+Action
+A59
+Calcium Strike
+null
+4
+Calcium
+Common
+    Deal 2 damage
+    Calcium Bond: Deal 4 damage instead
+End
+Attack
+1
+
+Action
+A60
+Smart Strike
+null
+6
+Lead
+Common
+    Deal 3 damage
+    Homing 1
+End
+Attack
+6
+
+Action
+A61
+Heat Seeker
+null
+4
+Lead
+Common
+    Deal 2 damage
+    Homing 3
+End
+Attack
+6
+
+Action
+A62
+Get Back
+null
+4
+Lead
+Common
+    Deal 1 damage
+    Push 4
+End
+Attack
+1
+
+Action
+A63
+Trick Shot
+null
+3
+Lead
+Common
+    Deal 2 damage
+    Homing 1
+End
+Attack
+3
+
+Action
+A64
+The Little Bullet that Could
+null
+4
+Lead
+Common
+    Deal damage equal to the number of hexes this attack travelled
+    Homing 1
+End
+Attack
+2
+
+Action
+A65
+Bullet Odyssey
+null
+1
+Lead
+Common
+    Deal 4 damage
+    Homing 6
+End
+Attack
+8
+
+Action
+A66
+Poisonous Preservation
+null
+5
+Lead
+Common
+    Heal yourself 3 HP
+    Lead Bond: Heal yourself 5 HP instead
+End
+Utility
+null
+
+Action
+A67
+Gunk Shot
+null
+3
+Lead
+Common
+    Target starts their next turn with (8) Neuro
+End
+Utility
+4
+
+Action
+A68
+Great Escape
+null
+3
+Lead
+Common
+    You can't play Great Escape if you've attacked this turn
+    You can't attack until next turn
+    Move up to 5 hexes in a line
+End
+Utility
+null
+
+Action
+A69
+Foraging
+null
+1
+Lead
+Common
+    Heal yourself 1 HP
+End
+Utility
+null
+
+Action
+A70
+Lead Strike
+null
+4
+Lead
+Common
+    Deal 2 damage
+    Lead Bond: Deal 4 damage instead
+End
+Attack
+1
+
+Action
+A71
+Squash
+null
+4
+Iron
+Common
+    Deal 3 damage
+End
+Attack
+1
+
+Action
+A72
+Hammer Fall
+null
+5
+Lead
+Common
+    Deal 3 damage
+    Decisive (3): Deal 5 damage instead
+End
+Attack
+1
+
+Action
+A73
+Planted Strike
+null
+3
+Lead
+Common
+    Deal 2 damage
+    Decisive (5): Deal 5 damage instead
+End
+Attack
+1
+
+Action
+A74
+Great Swing
+null
+4
+Iron
+Common
+    Deal 2 damage
+    Decisive (5) Deal 6 damage instead
+End
+Attack
+1
+
+Action
+A75
+Big Shot
+null
+6
+Iron
+Common
+    Deal 4 damage
+    Decisive (4): Deal 7 damage instead
+End
+Attack
+1
+
+Action
+A76
+Bump
+null
+3
+Iron
+Common
+    Deal 1 damage
+    Push 2
+End
+Attack
+1
+
+Action
+A77
+Follow Through
+null
+3
+Iron
+Common
+    As an additional cost to play this card, discard a card
+    Deal 3 damage
+    Push 1
+End
+Attack
+1
+
+Action
+A78
+Crashing Shot
+null
+6
+Iron
+Common
+    Deal 3 damage
+    Push 3. If the target hits an edge or an unoccupiable hex, they take +2 damage. If they hit an item this way, destroy it
+
+End
+Attack
+1
+
+Action
+A79
+Hammer Whiplash
+null
+6
+Iron
+Common
+    Pull 4, then deal 3 damage to an adjacent enemy
+End
+Attack
+4
+
+Action
+A80
+Huge Shot
+null
+1
+Iron
+Common
+    Deal 8 damage
+End
+Attack
+1
+
+Action
+A81
+Iron Strike
+null
+1
+Iron
+Common
+    Deal 2 damage
+    Iron Bond: Deal 4 damage instead
+End
+Attack
+1
+
+Enchantment
+E1
+Fuckin' Boots
+null
+6
+Copper
+Common
+    You gain +2 movement each turn
+End
+Boon
+null
+3
+
+Enchantment
+E2
+Collective Scorn
+null
+7
+Gold
+Common
+    Afflicted player takes +1 damage from all sources
+End
+Affliction
+1
+4
+
+Enchantment
+E3
+Shining Halo
+null
+6
+Gold
+Common
+    Cards that target you cost (1) more
+End
+Boon
+null
+4
+
+Enchantment
+E4
+Hot Novas
+null
+5
+Copper
+Common
+    Your cards with Radiance deal +2 damage to each target beyond the first
+End
+Boon
+null
+4
+
+Enchantment
+E5
+Slippery Skin
+null
+5
+Mercury
+Common
+    Whenever an opponent targets or attacks you, they discard a card
+End
+Boon
+null
+4
+
+Enchantment
+E6
+Thieving Claw
+null
+4
+Mercury
+Common
+    Whenever one of your attacks damages 2 or more enemies, draw a card
+End
+Boon
+null
+3
+
+Enchantment
+E7
+Explorer's Cape
+null
+3
+Mercury
+Common
+    You may use Mercury cards and terrain to fulfill any elemental requirements for utility cards
+End
+Boon
+null
+3
+
+Enchantment
+E8
+Supple Form
+null
+4
+Mercury
+Common
+    You may move through unoccupiable hexes
+    When on an unoccupiable hex, you may not do anything other than move
+End
+Boon
+null
+3
+
+Enchantment
+E9
+Mad as a Hatter
+null
+5
+Mercury
+Common
+    At the start of their turn, afflicted player discards a card
+End
+Affliction
+1
+4
+
+Enchantment
+E10
+Elasticity
+null
+5
+Mercury
+Common
+    Your Stretchy cards hav +2 Stretch
+End
+Boon
+null
+3
+
+Enchantment
+E11
+Forbidden Love
+null
+4
+Calcium
+Common
+    Prevent all damage you and afflicted player would deal to each other
+End
+Afflction
+1
+5
+
+Enchantment
+E12
+True Bond
+null
+3
+Calcium
+Common
+    Enchanted player is considered adjacent to you
+    You may target enchanted player as though they were adjacent to you
+End
+Boon
+1
+5
+
+Enchantment
+E13
+Weakness
+null
+5
+Calcium
+Common
+    Whenever afflicted player would deal damage, they do that much damage -1 instead
+End
+Affliction
+null
+1
+
+Enchantment
+E14
+Cursecatcher
+null
+3
+Calcium
+Common
+    Affliction that target afflicted player cost (2) less
+End
+Affliction
+1
+4
+
+Enchantment
+E15
+Psycho-Tick
+null
+4
+Calcium
+Common
+    At the start of afflicted player's turn, they take 1 damage for each affliction afflicting them
+End
+Affliction
+1
+5
+
+Enchantment
+E16
+Blood Bond
+null
+3
+Calcium
+Common
+    The first time you Drain an enemy each turn, Drain again
+End
+Boon
+null
+4
+
+Enchantment
+E17
+Pouch of Rat's Wort
+null
+5
+Lead
+Common
+    At the end of you turn, heal 1HP
+End
+Boon
+null
+1
+
+Enchantment
+E18
+Projectilize
+null
+5
+Lead
+Common
+    Your single-target attacks have +2 range and +1 homing
+End
+Boon
+null
+3
+
+Enchantment
+E19
+Spiky Cloth
+null
+3
+Lead
+Common
+    Whenever you or Spiky Cloth takes damage, deal 1 damage to the source of the damage
+End
+Boon
+null
+4
+
+Enchantment
+E20
+Fancy of Flight
+null
+7
+Lead
+Common
+    Whenever you or a boon enchanting you is damaged, you may move up to 2 hexes
+End
+Boon
+null
+5
+
+Enchantment
+E21
+The Goop
+null
+7
+Lead
+Common
+    Afflicted player's movements cost (2)
+End
+Affliction
+2
+4
+
+Enchantment
+E22
+Big Boots
+null
+5
+Iron
+Common
+    You can't be pushed or pulled
+End
+Armor
+null
+3
+
+Enchantment
+E23
+Magnetic Mail
+null
+5
+Iron
+Common
+    Iron Bond: If you are on Iron Terrain, this card has 5 HP instead
+End
+Armor
+null
+3
+
+Enchantment
+E24
+Little Big Suit
+null
+3
+Iron
+Common
+    You can't play Little Big Suit if you've move this turn
+    When you play Little Big Suit, you can't move until the end of turn
+End
+Armor
+null
+4
+
+Enchantment
+E25
+Suit of Armor
+null
+4
+Iron
+Common
+    null
+End
+Armor
+null
+3
+
+Enchantment
+E26
+Piece-Mail
+null
+5
+Iron
+Common
+    Damage doesn't wear off Piece-Mail
+    Whenever you move, deal 1 damage to Piece-Mail
+End
+Armor
+null
+10
+
+Enchantment
+E27
+Planted Feet
+null
+6
+Iron
+Common
+    Your Decisive abilities cost (2) less
+End
+Boon
+null
+6
+
+Path
+P1
+Path of Molten Metal
+null
+5
+Copper
+Common
+    null
+End
+1
+    Copper
+    Take 2 damage
+End
+2
+    Copper
+    Discard a card
+End
+3
+    Copper
+    Your next 3 attacks this turn deal +2 damage
+End
+Stop
+
+Path
+P2
+Path of Victorious Visions
+null
+5
+Gold
+Common
+    null
+End
+1
+    Gold
+    Mark an enemy of your choice
+End
+2
+    Gold
+    You gain an initiative token
+End
+3
+    Gold
+    All marked enemies take +2 damage until end of turn
+End
+Stop
+
+Path
+P3
+Path of Frivolous Fancies
+null
+5
+Mercury
+Common
+    null
+End
+1
+    Mercury
+    Draw a card
+End
+2
+    Mercury
+    Draw a card
+End
+3
+   Mercury
+   Deal damage to target equal to the number of cards in your hand (Range 2)
+End
+Stop
+
+Path
+P4
+Path of Consummate Care
+null
+5
+Calcium
+Common
+    null
+End
+1
+    Calcium
+    Up to one ally gains 2 movement tokens
+End
+2
+    Calcium
+    Up to one different ally gains 2 movement tokens
+End
+3
+    Calcium
+    Heal all adjacent allies 4 HP
+End
+Stop
+
+Path
+P5
+Path of Leery Lurkings
+null
+5
+Lead
+Common
+    null
+End
+1
+    Lead
+    Take 2 damage
+End
+2
+    Lead
+    Discard a card
+End
+3
+    Lead
+    Your next 3 attacks this turn deal +2 damage
+End
+Stop
+
+Path
+P6
+Path of Staunch Stances
+null
+5
+Iron
+Common
+    null
+End
+1
+    Iron
+    Take 2 damage
+End
+2
+    Iron
+    Discard a card
+End
+3
+    Iron
+    Your next 3 attacks this turn deal +2 damage
+End
+Stop
+
+Summon
+S1
+Wily Wires
+null
+5
+Copper
+Common
+    null
+End
+3
+4
+Attack
+    Deal 2 damage 
+    Range 1 
+End
+
+Summon
+S2
+Lustrous Lion
+null
+5
+Gold
+Common
+    Link 1
+End
+4
+4
+Attack
+    Double Attack 
+    Deal 1 damage 
+    Range 1 
+End
+
+Summon
+S3
+Lampling
+null
+5
+Gold
+Common
+    Link 1
+End
+5
+3
+Attack
+    Deal 2 damage 
+    Wave AOE 
+End
+
+Summon
+S4
+Dropling
+null
+5
+Mercury
+Common
+    Link 1
+End
+3
+4
+Attack
+    Deal 2 damage 
+    Stretchy 3 
+End
+
+Summon
+S5
+Sapling
+null
+5
+Calcium
+Common
+    Link 1
+End
+4
+5
+Attack
+    Deal 2 damage 
+    Range 1 
+End
+
+Summon
+S6
+Salvespore Bunny
+null
+5
+Calcium
+Common
+    Link 1
+End
+5
+3
+Utility
+    Heal target 2HP 
+    Range 1 
+End
+
+Summon
+S7
+Dirt Bird
+null
+5
+Lead
+Common
+    Link 1
+End
+5
+3
+Attack
+    Deal 2 damage 
+    Range 1 
+End
+
+Summon
+S8
+Clay Doll
+null
+5
+Iron
+Common
+    Link 1
+End
+2
+5
+Attack
+    Deal 3 damage 
+    Range 1 
+End
