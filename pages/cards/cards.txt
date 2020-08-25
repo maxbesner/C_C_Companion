@@ -635,6 +635,7 @@ Attack
 1
 
 Action
+A51
 Flaying Graft
 null
 6
@@ -990,7 +991,6 @@ Iron
 Common
     Deal 3 damage
     Push 3. If the target hits an edge or an unoccupiable hex, they take +2 damage. If they hit an item this way, destroy it
-
 End
 Attack
 1

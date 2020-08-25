@@ -42,4 +42,17 @@ class Summon extends Card
     }
 
 
+    function jsonSerialize()
+    {
+
+        $array = parent::jsonSerialize();
+
+        $array['hp'] = $this->getHP();
+        $array['movement'] = $this->getMovement();
+        $array['action'] = json_encode($this->getAction());
+
+        return $array;
+    }
+
+
 }

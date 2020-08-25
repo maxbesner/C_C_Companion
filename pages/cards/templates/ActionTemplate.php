@@ -5,26 +5,36 @@ include_once('Template.php');
 class ActionTemplate extends Template
 {
 
+    private $range = false;
+
+    private $rangeFontSize = 14;
+    private $rangeX = 36;
+    private $rangeY = 370;
+
     public function __construct($card){
         $this->card = $card;
 
         $this->fontFile = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/fonts/times.ttf";
 
-        $this->nameFontSize = 26;
+        $this->nameFontSize = 14;
         $this->nameX = 26;
-        $this->nameY = 22;
+        $this->nameY = 34;
 
-        $this->elementFontSize = 26;
-        $this->elementX = 190;
-        $this->elementY = 36;
+        $this->elementFontSize = 18;
+        $this->elementX = 180;
+        $this->elementY = 50;
 
-        $this->costFontSize = 26;
-        $this->costX = 228;
-        $this->costY = 49;
+        $this->typeFontSize = 10;
+        $this->typeX = 85;
+        $this->typeY = 64;
 
-        $this->rarityFontSize = 20;
-        $this->rarityX = 36;
-        $this->rarityY = 260;
+        $this->costFontSize = 18;
+        $this->costX = 225;
+        $this->costY = 64;
+
+        $this->rarityFontSize = 18;
+        $this->rarityX = 216;
+        $this->rarityY = 370;
 
         $this->textXLeft = 36;
         $this->textXRight = 180;
@@ -32,14 +42,14 @@ class ActionTemplate extends Template
         $this->textYBottom = 340;
         $this->textFontSize = 18;
 
-
-        $this->template = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/".$card->getElement().get_class($card);
+        $this->template = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/".$card->getElement()->getName().get_class($card);
 
         if($card->getRange() == null){
             $this->template .= "NoRange.jpg";
         }
         else{
             $this->template .= "Range.jpg";
+            $this->range = true;
         }
 
     }
@@ -54,9 +64,14 @@ class ActionTemplate extends Template
 
         $this->createName($image);
         $this->createElement($image);
+        $this->createType($image);
         $this->createCost($image);
         $this->createRarity($image);
         $this->createTextBox($image);
+
+        if($this->range){
+            $this->createRange($image);
+        }
 
         imagejpeg($image, $destPath);
     }
@@ -76,26 +91,34 @@ class ActionTemplate extends Template
 
     function createName($image){
         $color = imagecolorallocate($image, 0, 0, 0);
-        //Make sure variable scope works
         imagettftext($image, $this->nameFontSize, 0, $this->nameX, $this->nameY, $color, $this->fontFile, $this->card->getName());
     }
 
     function createElement($image){
         $color = imagecolorallocate($image, 0, 0, 0);
-        //Make sure variable scope works
-        imagettftext($image, $this->elementFontSize, 0, $this->elementX, $this->elementY, $color, $this->fontFile, substr($this->card->getElement(), 0, 1));
+        imagettftext($image, $this->elementFontSize, 0, $this->elementX, $this->elementY, $color, $this->fontFile, $this->card->getElement()->getSymbol());
     }
+
+    function createType($image){
+        $color = imagecolorallocate($image, 0, 0, 0);
+
+        imagettftext($image, $this->typeFontSize, 0, $this->typeX, $this->typeY, $color, $this->fontFile, get_class($this->card)." - ".$this->card->getSubtype());
+    }
+
 
     function createCost($image){
         $color = imagecolorallocate($image, 0, 0, 0);
-        //Make sure variable scope works
         imagettftext($image, $this->costFontSize, 0, $this->costX, $this->costY, $color, $this->fontFile, $this->card->getCost());
     }
 
     function createRarity($image){
         $color = imagecolorallocate($image, 0, 0, 0);
-        //Make sure variable scope works
-        imagettftext($image, $this->rarityFontSize, 0, $this->rarityX, $this->rarityY, $color, $this->fontFile, $this->card->getRarity());
+        imagettftext($image, $this->rarityFontSize, 0, $this->rarityX, $this->rarityY, $color, $this->fontFile, substr($this->card->getRarity(), 0 ,1));
+    }
+
+    function createRange($image){
+        $color = imagecolorallocate($image, 0, 0, 0);
+        imagettftext($image, $this->rangeFontSize, 0, $this->rangeX, $this->rangeY, $color, $this->fontFile, $this->card->getRange());
     }
 
     function createTextBox($image){

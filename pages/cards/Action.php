@@ -2,8 +2,7 @@
 
 include_once('Card.php');
 
-
-class Action extends Card
+class Action extends Card implements JsonSerializable
 {
     private $range;
     private $subtype;
@@ -40,5 +39,14 @@ class Action extends Card
         return $this->range;
     }
 
+    function jsonSerialize()
+    {
+        $array = parent::jsonSerialize();
+
+        $array['range'] = $this->getRange();
+        $array['subtype'] = $this->getSubtype();
+
+        return $array;
+    }
 
 }

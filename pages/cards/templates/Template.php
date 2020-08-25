@@ -14,6 +14,10 @@ abstract class Template
     protected $elementY;
     protected $elementFontSize;
 
+    protected $typeFontSize;
+    protected $typeX;
+    protected $typeY;
+
     protected $nameX;
     protected $nameY;
     protected $nameFontSize;
@@ -166,6 +170,7 @@ abstract class Template
 
         return -1;
     }
+
 
 
 }

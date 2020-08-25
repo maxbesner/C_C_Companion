@@ -2,16 +2,17 @@
 
 include_once('Card.php');
 
-class Enchantment extends Card
+class Enchantment extends Card implements JsonSerializable
 {
-    private $subtype;
+
     private $range;
+    private $subtype;
     private $hp;
 
-    public function __construct($id, $name, $art, $cost, $element, $rarity, $text, $subtype, $range, $hp){
+    public function __construct($id, $name, $art, $cost, $element, $rarity, $text,  $range, $subtype,$hp){
         parent::__construct($id, $name, $art, $cost, $element, $rarity, $text);
-        $this->setSubtype($subtype);
         $this->setRange($range);
+        $this->setSubtype($subtype);
         $this->setHP($hp);
     }
 
@@ -47,6 +48,17 @@ class Enchantment extends Card
 
     public function getHP(){
         return $this->hp;
+    }
+
+    function jsonSerialize()
+    {
+        $array = parent::jsonSerialize();
+
+        $array['range'] = $this->getRange();
+        $array['subtype'] = json_encode($this->getSubtype());
+        $array['hp'] = $this->getHP();
+
+        return $array;
     }
 
 

@@ -3,7 +3,7 @@
 include_once('Card.php');
 include_once('Step.php');
 
-class Path extends Card
+class Path extends Card implements JsonSerializable
 {
     private $steps = Array();
 
@@ -18,6 +18,15 @@ class Path extends Card
 
     public function getSteps(){
         return $this->steps;
+    }
+
+    function jsonSerialize()
+    {
+        $array = parent::jsonSerialize();
+
+        $array['steps'] = json_encode($this->getSteps());
+
+        return $array;
     }
 
 }

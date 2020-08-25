@@ -45,4 +45,8 @@ class ElementList
     public function getElements(){
         return $this->elements;
     }
+
+    public function getElement($element){
+        return $this->elements[$element];
+    }
 }

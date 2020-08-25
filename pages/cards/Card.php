@@ -1,12 +1,14 @@
 <?php
 
 include_once('Action.php');
-include_once('Card.php');
 include_once('Enchantment.php');
 include_once('Path.php');
 include_once('Step.php');
 include_once('Summon.php');
 include_once('SummonAction.php');
+
+include_once('C:/xampp/htdocs/CharacterBuilder/pages/ElementList.php');
+include_once('C:/xampp/htdocs/CharacterBuilder/pages/Element.php');
 
 class Card
 {
@@ -17,7 +19,6 @@ class Card
     private $element;
     private $rarity;
     private $text;
-    private $templates;
     protected $rangeType;
 
     public function __construct($id, $name, $art, $cost, $element, $rarity, $text){
@@ -32,6 +33,9 @@ class Card
     }
 
     public static function loadCardsFromFile(){
+
+        $elementList = new ElementList();
+
         $cards = array();
 
         $f = "C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.txt";
@@ -45,7 +49,7 @@ class Card
             $name = trim(fgets($file));
             $art = trim(fgets($file));
             $cost = trim(fgets($file));
-            $element = trim(fgets($file));
+            $element = $elementList->getElement(trim(fgets($file)));
             $rarity = trim(fgets($file));
 
             $textClauses = array();
@@ -86,7 +90,7 @@ class Card
 
                     while($number != "Stop"){
 
-                        $element = trim(fgets($file));
+                        $stepElement = trim(fgets($file));
 
 
                         $subtext = "";
@@ -101,7 +105,7 @@ class Card
                         }
 
 
-                        $steps[$number] = new Step($element, $subtext);
+                        $steps[$number] = new Step($stepElement, $subtext);
 
                         $number = trim(fgets($file));
                     }
@@ -127,7 +131,7 @@ class Card
                     $cards[$id] = new Summon($id, $name, $art, $cost, $element, $rarity, $textClauses, $hp, $movement, new SummonAction($subtype, $subtext));
                     break;
                 default:
-                    echo "WTF??";
+                    echo "??";
 
             }
 
@@ -202,13 +206,16 @@ class Card
         return $this->rangeType;
     }
 
-    private function setTemplate(){
-        $this->templates = Templates::getAndInitializeTemplates();
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'art' => $this->getArt(),
+            'cost' => $this->getCost(),
+            'element' => $this->getElement()->getName(),
+            'rarity' => $this->getRarity(),
+            'text' => $this->getText(),
+        ];
     }
-
-    private function getTemplate(){
-        return $this->templates[$this->getElement()][get_class($this)];
-    }
-
-
 }

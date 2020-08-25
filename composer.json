@@ -12,8 +12,8 @@
   "require": {
     "phpunit/phpunit": "^7",
     "ext-gd": "*",
-    "php-debug/debugger": "v0.1.0"
+    "php-debug/debugger": "v0.1.0",
+    "ext-json": "*"
   }
-
 
 }

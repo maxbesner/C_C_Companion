@@ -12,17 +12,47 @@ class TemplateTest extends PHPUnit\Framework\TestCase
 
     protected $actionTemplate;
     protected $cards;
+    protected $actionTemplates = array();
 
     protected function setUp(){
         $this->cards = Card::loadCardsFromFile();
-        $this->actionTemplate = new ActionTEmplate($this->cards["A23"]);
 
+        foreach($this->cards as $card){
+            if(get_class($card) == "Action"){
+                $this->actionTemplates[] = new ActionTemplate($card);
+            }
+        }
     }
+
+    function testMakeJSON(){
+
+        $file ='C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.json';
+
+        file_put_contents($file, "");
+        $current = file_get_contents($file);
+
+        foreach($this->cards as $card){
+            $current .= json_encode($card)."\n\n";
+        }
+
+        file_put_contents($file, $current);
+
+        $this->assertTrue(true);
+    }
+
+    function /*test*/DecodeJSON(){
+
+        $file ='C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.json';
+
+        $current = file_get_contents($file);
+
+        var_dump(json_decode($current));
+
+        $this->assertTrue(true);
+    }
+
     //toggle test with test name
     function makeTemplateDirectories(){
-
-        echo "boop";
-
         $elements = new ElementList();
 
         foreach($elements->getElements() as $element){
@@ -36,7 +66,10 @@ class TemplateTest extends PHPUnit\Framework\TestCase
 
 
     function testCreateTemplate(){
-        $this->actionTemplate->createTemplate();
+
+        foreach($this->actionTemplates as $template){
+            $template->createTemplate();
+        }
 
         $this->assertTrue(true);
     }
@@ -53,7 +86,6 @@ class TemplateTest extends PHPUnit\Framework\TestCase
 
         $this->assertTrue(true);
     }
-
 
 
 

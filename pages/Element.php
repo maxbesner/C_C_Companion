@@ -28,7 +28,7 @@ class Element
 
     public function setSymbol($symbol)
     {
-        $this->name = $symbol;
+        $this->symbol = $symbol;
     }
 
     public function getSymbol()

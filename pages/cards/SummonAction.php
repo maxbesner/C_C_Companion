@@ -1,7 +1,7 @@
 <?php
 
 
-class SummonAction
+class SummonAction implements JsonSerializable
 {
 
     private $subtype;
@@ -29,4 +29,12 @@ class SummonAction
         return $this->text;
     }
 
+    public function jsonSerialize()
+    {
+        return [
+            'subtype' => $this->getSubtype(),
+            'text' => $this->getText()
+        ];
+        // TODO: Implement jsonSerialize() method.
+    }
 }
