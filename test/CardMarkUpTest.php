@@ -1,55 +1,49 @@
 <?php
 
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/ActionTemplate.php');
+include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/EnchantmentTemplate.php');
+
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/Card.php');
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/ElementList.php');
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/Element.php');
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/CardTypes.php');
 
-class TemplateTest extends PHPUnit\Framework\TestCase
+class CardMarkUpTest extends PHPUnit\Framework\TestCase
 {
 
 
     protected $actionTemplate;
     protected $cards;
     protected $actionTemplates = array();
+    protected $enchantmentTemplates = array();
+
+    protected $templates = array();
+
+
 
     protected function setUp(){
+
+        /*
+         * foreach(CardTypes::getCardTypes() as $cardType){
+         *      $templates[$cardType] = array();
+         * }
+         */
         $this->cards = Card::loadCardsFromFile();
 
         foreach($this->cards as $card){
             if(get_class($card) == "Action"){
                 $this->actionTemplates[] = new ActionTemplate($card);
             }
-        }
-    }
 
-    function testMakeJSON(){
+            if(get_class($card) == "Enchantment"){
+                $this->enchantmentTemplates[] = new EnchantmentTemplate($card);
+            }
 
-        $file ='C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.json';
 
-        file_put_contents($file, "");
-        $current = file_get_contents($file);
-
-        foreach($this->cards as $card){
-            $current .= json_encode($card)."\n\n";
         }
 
-        file_put_contents($file, $current);
-
-        $this->assertTrue(true);
     }
 
-    function /*test*/DecodeJSON(){
-
-        $file ='C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.json';
-
-        $current = file_get_contents($file);
-
-        var_dump(json_decode($current));
-
-        $this->assertTrue(true);
-    }
 
     //toggle test with test name
     function makeTemplateDirectories(){
@@ -65,10 +59,18 @@ class TemplateTest extends PHPUnit\Framework\TestCase
     }
 
 
-    function testCreateTemplate(){
+    function testCreateAction(){
 
         foreach($this->actionTemplates as $template){
-            $template->createTemplate();
+            $template->createCard();
+        }
+
+        $this->assertTrue(true);
+    }
+
+    function testCreateEnchantment(){
+        foreach($this->enchantmentTemplates as $template){
+            $template->createCard();
         }
 
         $this->assertTrue(true);
@@ -86,6 +88,7 @@ class TemplateTest extends PHPUnit\Framework\TestCase
 
         $this->assertTrue(true);
     }
+
 
 
 

@@ -5,11 +5,12 @@ include_once('Card.php');
 class Enchantment extends Card implements JsonSerializable
 {
 
-    private $range;
+
     private $subtype;
+    private $range;
     private $hp;
 
-    public function __construct($id, $name, $art, $cost, $element, $rarity, $text,  $range, $subtype,$hp){
+    public function __construct($id, $name, $art, $cost, $element, $rarity, $text,  $subtype,$range, $hp){
         parent::__construct($id, $name, $art, $cost, $element, $rarity, $text);
         $this->setRange($range);
         $this->setSubtype($subtype);

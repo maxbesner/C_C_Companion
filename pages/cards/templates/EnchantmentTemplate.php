@@ -2,14 +2,18 @@
 
 include_once('Template.php');
 
-class ActionTemplate extends Template
+class EnchantmentTemplate extends Template
 {
 
     private $range = false;
 
     private $rangeFontSize = 14;
-    private $rangeX = 36;
-    private $rangeY = 370;
+    private $rangeX = 26;
+    private $rangeY = 390;
+
+    private $hpFontSize = 14;
+    private $hpX = 130;
+    private $hpY = 390;
 
     public function __construct($card){
         $this->card = $card;
@@ -21,7 +25,7 @@ class ActionTemplate extends Template
         $this->nameY = 34;
 
         $this->elementFontSize = 18;
-        $this->elementX = 180;
+        $this->elementX = 190;
         $this->elementY = 50;
 
         $this->typeFontSize = 10;
@@ -29,17 +33,17 @@ class ActionTemplate extends Template
         $this->typeY = 64;
 
         $this->costFontSize = 18;
-        $this->costX = 225;
+        $this->costX = 235;
         $this->costY = 64;
 
         $this->rarityFontSize = 18;
-        $this->rarityX = 216;
-        $this->rarityY = 370;
+        $this->rarityX = 225;
+        $this->rarityY = 390;
 
         $this->textXLeft = 36;
         $this->textXRight = 170;
-        $this->textYTop = 260;
-        $this->textYBottom = 340;
+        $this->textYTop = 265;
+        $this->textYBottom = 358;
         $this->textFontSize = 18;
 
         $this->template = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/".$card->getElement()->getName().get_class($card);
@@ -68,6 +72,7 @@ class ActionTemplate extends Template
         $this->createCost($image);
         $this->createRarity($image);
         $this->createTextBox($image);
+        $this->createHP($image);
 
         if($this->range){
             $this->createRange($image);
@@ -75,7 +80,6 @@ class ActionTemplate extends Template
 
         imagejpeg($image, $destPath);
     }
-
 
     function createName($image){
         $color = imagecolorallocate($image, 0, 0, 0);
@@ -107,6 +111,11 @@ class ActionTemplate extends Template
     function createRange($image){
         $color = imagecolorallocate($image, 0, 0, 0);
         imagettftext($image, $this->rangeFontSize, 0, $this->rangeX, $this->rangeY, $color, $this->fontFile, 'Ra: '.$this->card->getRange());
+    }
+
+    function createHP($image){
+        $color = imagecolorallocate($image, 0, 0, 0);
+        imagettftext($image, $this->hpFontSize, 0, $this->hpX, $this->hpY, $color, $this->fontFile, '<3: '.$this->card->getHP());
     }
 
     function createTextBox($image){

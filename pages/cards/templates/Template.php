@@ -39,7 +39,7 @@ abstract class Template
     //space between clauses in text
     protected $pixelBuffer;
 
-    abstract function createTemplate();
+    abstract function createCard();
 
     function formatText( $fontSize, $font, $text, $xPixels, $yPixels){
 
@@ -62,44 +62,32 @@ abstract class Template
         $fontSizeAndFormattedText = array();
         $fontSizeAndFormattedText["fontSize"] = $fontSize;
         $fontSizeAndFormattedText["text"] = $formattedText;
+
         return $fontSizeAndFormattedText;
     }
 
     private function formatClause($fontSize, $font, $clauseArray, $xPixels){
-        $clause = $clauseArray[0];
 
-        $numberOfLines = $this->getClauseNumberOfLines($fontSize, $font, $clauseArray, $xPixels);
+        $numberOfPixels = $this->getClauseNumberOfPixels($fontSize,$font, $clauseArray[0]);
 
-        //no overflow if number of lines is 1 so no formatting needed
-        if($numberOfLines == 1){
+        if($numberOfPixels == 0){
             return $clauseArray;
         }
 
-        $clauseLines = array();
+        $charsPerLine = floor(strlen($clauseArray[0]) * $xPixels/$numberOfPixels);
 
-        $charsPerLine = strlen($clause) * $xPixels/$this->getClauseNumberOfPixels($fontSize,$font, $clause);
-        //$charsPerLine = floor(strlen($clause)/$numberOfLines);
-        
-        for($i = 0; $i <= $numberOfLines - 2; $i++){
+        for($i = 0; strlen($clauseArray[$i]) > $charsPerLine ; $i++){
             //approximate conversion from pixels to character position
 
-            if($i == 0){
-                $chars = $this->findNearestSpace($charsPerLine, $clause);
-                $clauseLines[$i + 1] = substr($clause, $chars + 1);
+                $chars = $this->findNearestSpace($charsPerLine, $clauseArray[$i]);
 
-                $clauseLines[$i] = substr($clause, 0, $chars);
-            }
-            else{
-                $chars = $this->findNearestSpace($charsPerLine, $clauseLines[$i]);
+                $clauseArray[$i + 1] = substr($clauseArray[$i], $chars + 1);
 
-                $clauseLines[$i + 1] = substr($clauseLines[$i], $chars + 1);
-
-                $clauseLines[$i] = substr($clauseLines[$i], 0, $chars);
-            }
+                $clauseArray[$i] = substr($clauseArray[$i], 0, $chars);
 
         }
 
-        return $clauseLines;
+        return $clauseArray;
 
 
     }
@@ -108,20 +96,20 @@ abstract class Template
         //boundingBox of first line of first clause
         $boundingBox = imagettfbbox($fontSize, 45,$font, $text[0][0]);
 
-        $numberOfLines = $this->getTextNumberOfLines($fontSize, $font,$text, $xPixels);
+        $numberOfLines = $this->getTextNumberOfLines($text);
 
-        $this->pixelBuffer = $boundingBox[1] - $boundingBox[7];
+        $this->pixelBuffer = ($boundingBox[1] - $boundingBox[7])*1.2;
 
         //does text have more yPixels than allowed
         return ($this->pixelBuffer)*$numberOfLines <= $yPixels;
     }
 
-    function getTextNumberOfLines($fontSize, $font, $text, $xPixels){
+    function getTextNumberOfLines($text){
 
         $count = 0;
 
         foreach($text as $clause){
-            $count += $this->getClauseNumberOfLines($fontSize, $font, $clause, $xPixels);
+            $count += count($clause);
         }
 
         //number of spaces needed
@@ -137,35 +125,15 @@ abstract class Template
         return $boundingBox[2] - $boundingBox[0];
     }
 
-    function getClauseNumberOfLines($fontSize, $font, $clause, $xPixels){
-
-            $clauseArray = new ArrayObject($clause);
-
-            if($clauseArray->count() > 1){
-                return $clauseArray->count();
-            }
-
-        //number of times rounded up xPixels can fit into clause
-        return ceil($this->getClauseNumberOfPixels($fontSize, $font, $clause[0])/$xPixels*1.0);
-    }
 
     function findNearestSpace($pos, $string){
 
-        $posL = $pos;
-        $posR = $pos;
-        $lastPos = strlen($string) - 1;
-        while($posL >= 0 && $posR <= $lastPos){
-
-            if($posL >= 0 && substr($string, $posL, 1) == " "){
-                return $posL;
+        while($pos >= 0){
+            if(substr($string, $pos, 1) == " " ){
+                return $pos;
             }
 
-            if($posR <= $lastPos && substr($string, $posR, 1) == " "){
-                return $posR;
-            }
-
-            $posL--;
-            $posR++;
+            $pos--;
         }
 
         return -1;

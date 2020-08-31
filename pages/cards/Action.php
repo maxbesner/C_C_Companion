@@ -4,8 +4,9 @@ include_once('Card.php');
 
 class Action extends Card implements JsonSerializable
 {
-    private $range;
+
     private $subtype;
+    private $range;
 
     public function __construct($id, $name, $art, $cost, $element, $rarity, $text, $subtype, $range){
         parent::__construct($id, $name, $art, $cost, $element, $rarity, $text);

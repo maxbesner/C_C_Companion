@@ -5,7 +5,7 @@ cast a wide circle of influence over reality,
 rewarding those who benefit you and punishing those who
 would oppose you
 Stop
-#e6e600
+14724352
 
 Copper
 Cu
@@ -14,7 +14,7 @@ galvanize yourself and your surroundings, allowing
 you to outpace your rivals and overload anyone who
 can\'t handle your abundant energy
 Stop
-#cc3300;
+11665408
 
 Iron
 Fe
@@ -22,7 +22,7 @@ Firm and steadfast, Iron Neuro is used to
 defend and shunt, casting boundless barriers and
 crushing enemies with blunt force
 Stop
-#663300
+3675392
 
 Calcium
 Ca
@@ -31,7 +31,7 @@ care for your allies and life at large,
 imbuing the vulnerable with vitality and rewarding
 teamwork
 Stop
-#ffccff
+13816530
 
 Lead
 Pb
@@ -39,7 +39,7 @@ Dire and shadowy, Lead Neuro is used to protect
 yourself from the wicked world, and then executing
 a well-planned offense from a safe distance
 Stop
-#004d00
+5376
 
 Mercury
 Hg
@@ -48,4 +48,4 @@ transform yourself and anything else you can find lying
 around into the perfect tool for the job at hand,
 confounding your enemies with whimsical brilliance
 Stop
-#33ccff
+9093119
