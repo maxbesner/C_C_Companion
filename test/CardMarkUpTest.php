@@ -2,6 +2,9 @@
 
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/ActionTemplate.php');
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/EnchantmentTemplate.php');
+include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/SummonTemplate.php');
+include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/Path3Template.php');
+
 
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/cards/Card.php');
 include_once('C:/xampp/htdocs/CharacterBuilder/pages/ElementList.php');
@@ -14,8 +17,11 @@ class CardMarkUpTest extends PHPUnit\Framework\TestCase
 
     protected $actionTemplate;
     protected $cards;
+
     protected $actionTemplates = array();
     protected $enchantmentTemplates = array();
+    protected $summonTemplates = array();
+    protected $pathTemplates = array();
 
     protected $templates = array();
 
@@ -39,6 +45,13 @@ class CardMarkUpTest extends PHPUnit\Framework\TestCase
                 $this->enchantmentTemplates[] = new EnchantmentTemplate($card);
             }
 
+            if(get_class($card) == "Summon"){
+                $this->summonTemplates[] = new SummonTemplate($card);
+            }
+
+            if(get_class($card) == "Path"){
+                $this->pathTemplates[] = new Path3Template($card);
+            }
 
         }
 
@@ -70,6 +83,22 @@ class CardMarkUpTest extends PHPUnit\Framework\TestCase
 
     function testCreateEnchantment(){
         foreach($this->enchantmentTemplates as $template){
+            $template->createCard();
+        }
+
+        $this->assertTrue(true);
+    }
+
+    function CreateSummon(){
+        foreach($this->summonTemplates as $template){
+            $template->createCard();
+        }
+
+        $this->assertTrue(true);
+    }
+
+    function testCreatePath3(){
+        foreach($this->pathTemplates as $template){
             $template->createCard();
         }
 

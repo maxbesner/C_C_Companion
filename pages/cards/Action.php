@@ -1,8 +1,9 @@
 <?php
 
 include_once('Card.php');
+include_once("C:/xampp/htdocs/CharacterBuilder/pages/cards/Subtyped.php");
 
-class Action extends Card implements JsonSerializable
+class Action extends Card implements JsonSerializable, Subtyped
 {
 
     private $subtype;

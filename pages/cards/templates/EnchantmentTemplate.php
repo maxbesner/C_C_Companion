@@ -60,52 +60,16 @@ class EnchantmentTemplate extends Template
 
     function createCard()
     {
-        // TODO: Implement createTemplate() method.
-        $destPath = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/cardImages/'.$this->card->getId().".jpg";
-        ;
-        copy($this->template, $destPath);
-        $image = imagecreatefromjpeg($destPath);
+        parent::createCard();
 
-        $this->createName($image);
-        $this->createElement($image);
-        $this->createType($image);
-        $this->createCost($image);
-        $this->createRarity($image);
-        $this->createTextBox($image);
-        $this->createHP($image);
+        $this->createTextBox($this->image);
+        $this->createHP($this->image);
 
         if($this->range){
-            $this->createRange($image);
+            $this->createRange($this->image);
         }
 
-        imagejpeg($image, $destPath);
-    }
-
-    function createName($image){
-        $color = imagecolorallocate($image, 0, 0, 0);
-        imagettftext($image, $this->nameFontSize, 0, $this->nameX, $this->nameY, $color, $this->fontFile, $this->card->getName());
-    }
-
-    function createElement($image){
-        $color = imagecolorallocate($image, 0, 0, 0);
-        imagettftext($image, $this->elementFontSize, 0, $this->elementX, $this->elementY, $color, $this->fontFile, $this->card->getElement()->getSymbol());
-    }
-
-    function createType($image){
-        $color = imagecolorallocate($image, 0, 0, 0);
-
-        imagettftext($image, $this->typeFontSize, 0, $this->typeX, $this->typeY, $color, $this->fontFile, get_class($this->card)." - ".$this->card->getSubtype());
-    }
-
-
-    function createCost($image){
-        $color = imagecolorallocate($image, 0, 0, 0);
-        imagettftext($image, $this->costFontSize, 0, $this->costX, $this->costY, $color, $this->fontFile, $this->card->getCost());
-    }
-
-    function createRarity($image){
-        $color = imagecolorallocate($image, 0, 0, 0);
-        imagettftext($image, $this->rarityFontSize, 0, $this->rarityX, $this->rarityY, $color, $this->fontFile, substr($this->card->getRarity(), 0 ,1));
+        imagejpeg($this->image, $this->imagePath);
     }
 
     function createRange($image){

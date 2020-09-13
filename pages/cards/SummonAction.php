@@ -5,7 +5,7 @@ class SummonAction implements JsonSerializable
 {
 
     private $subtype;
-    private $text;
+    private $text = array();
 
     public function __construct($subtype, $text){
 

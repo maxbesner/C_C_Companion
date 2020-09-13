@@ -298,7 +298,6 @@ null
 1
 Gold
 Common
-    Mark the target
     Radiance
 End
 Utility
@@ -350,7 +349,6 @@ null
 Gold
 Common
     Deal 2 damage
-
     Gain initiative
 End
 Attack
@@ -536,7 +534,7 @@ Utility
 
 Action
 A43
-Mana Dink
+Neuro Dink
 null
 3
 Mercury
@@ -684,7 +682,7 @@ null
 Calcium
 Common
     Heal target ally for 3 HP
-    Heal for 5 instead
+    Calcium Bond: Heal for 5 instead
 End
 Utility
 1
@@ -1356,7 +1354,7 @@ null
 4
 Iron
 Common
-    null
+
 End
 Armor
 null
@@ -1396,11 +1394,10 @@ null
 5
 Iron
 Common
-    Enchanted player can't move
-
-    This Enchantment can be attacked by the player it enchants
+    Afflicted player can't move
+    This Affliction can be attacked by the player it enchants
 End
-Armor Curse
+Armor Affliction
 1
 3
 
@@ -1553,9 +1550,9 @@ Common
 End
 3
 4
+1
 Attack
-    Deal 2 damage 
-    Range 1 
+    Deal 2 damage
 End
 
 Summon
@@ -1569,10 +1566,10 @@ Common
 End
 4
 4
+1
 Attack
     Double Attack 
-    Deal 1 damage 
-    Range 1 
+    Deal 1 damage
 End
 
 Summon
@@ -1586,9 +1583,9 @@ Common
 End
 5
 3
+Wave
 Attack
-    Deal 2 damage 
-    Wave AOE 
+    Deal 2 damage
 End
 
 Summon
@@ -1602,9 +1599,10 @@ Common
 End
 3
 4
+3
 Attack
     Deal 2 damage 
-    Stretchy 3 
+    Stretchy
 End
 
 Summon
@@ -1618,9 +1616,9 @@ Common
 End
 4
 5
+1
 Attack
-    Deal 2 damage 
-    Range 1 
+    Deal 2 damage
 End
 
 Summon
@@ -1634,9 +1632,9 @@ Common
 End
 5
 3
+1
 Utility
-    Heal target 2HP 
-    Range 1 
+    Heal target 2HP
 End
 
 Summon
@@ -1650,9 +1648,9 @@ Common
 End
 5
 3
+1
 Attack
-    Deal 2 damage 
-    Range 1 
+    Deal 2 damage
 End
 
 Summon
@@ -1666,7 +1664,7 @@ Common
 End
 2
 5
+1
 Attack
-    Deal 3 damage 
-    Range 1 
+    Deal 3 damage
 End

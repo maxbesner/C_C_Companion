@@ -1,8 +1,9 @@
 <?php
 
 include_once('Card.php');
+include_once("C:/xampp/htdocs/CharacterBuilder/pages/cards/Subtyped.php");
 
-class Enchantment extends Card implements JsonSerializable
+class Enchantment extends Card implements JsonSerializable, Subtyped
 {
 
 

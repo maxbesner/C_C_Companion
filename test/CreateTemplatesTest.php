@@ -16,6 +16,12 @@ class CreateTemplatesTest extends TestCase
     protected $goldEnchantmentRangeFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
     protected $goldEnchantmentRangeImage;
 
+    protected $goldSummonFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
+    protected $goldSummonImage;
+
+    protected $goldPathFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
+    protected $goldPathImage;
+
 
     protected $actionRangeBoxStartX = 5;
     protected $actionRangeBoxEndX = 200;
@@ -40,7 +46,35 @@ class CreateTemplatesTest extends TestCase
 
     }
 
-    function testEnchantmentColourSwap(){
+
+    function testSummonColourSwap(){
+        foreach($this->elements as $element){
+            $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Summon.jpg';
+            copy($this->goldSummonFileName, $imageCopyFile);
+
+            $imageCopy = imagecreatefromjpeg($imageCopyFile);
+
+            $image = $this->colourSwap($imageCopy, $imageCopyFile, $element->getColour());
+            imagejpeg($image, $imageCopyFile);
+        }
+        $this->assertTrue(true);
+    }
+
+    function testPath3ColourSwap(){
+        foreach($this->elements as $element){
+            $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Path3.jpg';
+            copy($this->goldPathFileName, $imageCopyFile);
+
+            $imageCopy = imagecreatefromjpeg($imageCopyFile);
+
+            $image = $this->colourSwap($imageCopy, $imageCopyFile, $element->getColour());
+            imagejpeg($image, $imageCopyFile);
+        }
+        $this->assertTrue(true);
+    }
+
+
+    function EnchantmentColourSwap(){
         foreach($this->elements as $element){
             $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
             copy($this->goldEnchantmentRangeFileName, $imageCopyFile);

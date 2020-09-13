@@ -61,7 +61,6 @@ class Card
                 $clauseArray[] = $clause;
                 $textClauses[] = $clauseArray;
                 $clause = trim(fgets($file));
-
             }
 
 
@@ -93,19 +92,22 @@ class Card
                         $stepElement = trim(fgets($file));
 
 
-                        $subtext = "";
+                        $subtext  = array();
 
-                        $clause = trim(fgets($file));
+                        $line = trim(fgets($file));
 
-                        while($clause != "End"){
 
-                            $subtext .= $clause."\n";
+                        while($line != "End"){
 
-                            $clause = trim(fgets($file));
+                            $clause = array($line);
+
+                            $subtext[] = $clause;
+
+                            $line = trim(fgets($file));
                         }
 
 
-                        $steps[$number] = new Step($stepElement, $subtext);
+                        $steps[$number] = new Step($elementList->getElement($stepElement), $subtext);
 
                         $number = trim(fgets($file));
                     }
@@ -115,20 +117,24 @@ class Card
                 case "Summon":
                     $hp = trim(fgets($file));
                     $movement = trim(fgets($file));
+                    $range = trim(fgets($file));
                     $subtype = trim(fgets($file));
 
-                    $subtext  = "";
+                    $subtext  = array();
 
-                    $clause = trim(fgets($file));
+                    $line = trim(fgets($file));
 
-                    while($clause != "End"){
 
-                        $subtext .= $clause;
+                    while($line != "End"){
 
-                        $clause = trim(fgets($file));
+                        $clause = array($line);
+
+                        $subtext[] = $clause;
+
+                        $line = trim(fgets($file));
                     }
 
-                    $cards[$id] = new Summon($id, $name, $art, $cost, $element, $rarity, $textClauses, $hp, $movement, new SummonAction($subtype, $subtext));
+                    $cards[$id] = new Summon($id, $name, $art, $cost, $element, $rarity, $textClauses, $hp, $movement, $range, new SummonAction($subtype, $subtext));
                     break;
                 default:
                     echo "??";

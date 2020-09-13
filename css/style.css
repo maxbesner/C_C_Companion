@@ -6,6 +6,9 @@
         Purpose of the stylesheet follows.
 */
 
+#inline{
+    display: inline-block;
+}
 
 .gold{
     color: #e6e600;

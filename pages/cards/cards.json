@@ -44,7 +44,7 @@
 
 {"id":"A23","name":"Inspiring Barrage","art":"null","cost":"6","element":"Gold","rarity":"Common","text":[["Deal 1 damage"],["Radiance"],["Up to one ally draws a card for each enemy hit by this attack"]],"range":"Longsword","subtype":"Attack"}
 
-{"id":"A24","name":"Vilification","art":"null","cost":"1","element":"Gold","rarity":"Common","text":[["Mark the target"],["Radiance"]],"range":"1","subtype":"Utility"}
+{"id":"A24","name":"Vilification","art":"null","cost":"1","element":"Gold","rarity":"Common","text":[["Radiance"]],"range":"1","subtype":"Utility"}
 
 {"id":"A25","name":"Motivation","art":"null","cost":"4","element":"Gold","rarity":"Common","text":[["Target draws 2 cards"]],"range":"2","subtype":"Utility"}
 
@@ -52,7 +52,7 @@
 
 {"id":"A27","name":"Big Bang","art":"null","cost":"10","element":"Gold","rarity":"Common","text":[["Deal 5 damage"],["Radiance"]],"range":"Double Nova","subtype":"Attack"}
 
-{"id":"A28","name":"Daring Demonstration","art":"null","cost":"5","element":"Gold","rarity":"Common","text":[["Deal 2 damage"],[""],["Gain initiative"]],"range":"2","subtype":"Attack"}
+{"id":"A28","name":"Daring Demonstration","art":"null","cost":"5","element":"Gold","rarity":"Common","text":[["Deal 2 damage"],["Gain initiative"]],"range":"2","subtype":"Attack"}
 
 {"id":"A29","name":"Gleaming Guidance","art":"null","cost":"6","element":"Gold","rarity":"Common","text":[["Target gains +1 to all attacks during their next turn"],["Gold Bond: That ally instead gains +2 to all attacks during their next turn if you play this card on Gold Terrain"]],"range":"1","subtype":"Attack"}
 
@@ -82,7 +82,7 @@
 
 {"id":"A42","name":"Aura Syphon","art":"null","cost":"8","element":"Mercury","rarity":"Common","text":[["Gain control of up to one enchantment enchanting the target"]],"range":"1","subtype":"Utility"}
 
-{"id":"A43","name":"Mana Dink","art":"null","cost":"3","element":"Mercury","rarity":"Common","text":[["The next card you play has no elemental requirements"]],"range":"null","subtype":"Utility"}
+{"id":"A43","name":"Neuro Dink","art":"null","cost":"3","element":"Mercury","rarity":"Common","text":[["The next card you play has no elemental requirements"]],"range":"null","subtype":"Utility"}
 
 {"id":"A44","name":"Looky Loo","art":"null","cost":"4","element":"Mercury","rarity":"Common","text":[["Draw 2 cards"]],"range":"null","subtype":"Utility"}
 
@@ -104,7 +104,7 @@
 
 {"id":"A53","name":"Tandem Strike","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["Play Tandem Strike only if you have 2 or more allies adjacent to you"],["Deal 6 damage"]],"range":"2","subtype":"Attack"}
 
-{"id":"A54","name":"Infused Love","art":"null","cost":"4","element":"Calcium","rarity":"Common","text":[["Heal target ally for 3 HP"],["Heal for 5 instead"]],"range":"1","subtype":"Utility"}
+{"id":"A54","name":"Infused Love","art":"null","cost":"4","element":"Calcium","rarity":"Common","text":[["Heal target ally for 3 HP"],["Calcium Bond: Heal for 5 instead"]],"range":"1","subtype":"Utility"}
 
 {"id":"A55","name":"Touch of Frailty","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["Deal 2 damage"],["Target's next attack deals -1 damage"]],"range":"1","subtype":"Attack"}
 
@@ -208,25 +208,25 @@
 
 {"id":"E24","name":"Little Big Suit","art":"null","cost":"3","element":"Iron","rarity":"Common","text":[["You can't play Little Big Suit if you've move this turn"],["When you play Little Big Suit, you can't move until the end of turn"]],"range":"null","subtype":"\"Armor\"","hp":"4"}
 
-{"id":"E25","name":"Suit of Armor","art":"null","cost":"4","element":"Iron","rarity":"Common","text":[["null"]],"range":"null","subtype":"\"Armor\"","hp":"3"}
+{"id":"E25","name":"Suit of Armor","art":"null","cost":"4","element":"Iron","rarity":"Common","text":[[""]],"range":"null","subtype":"\"Armor\"","hp":"3"}
 
 {"id":"E26","name":"Piece-Mail","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["Damage doesn't wear off Piece-Mail"],["Whenever you move, deal 1 damage to Piece-Mail"]],"range":"null","subtype":"\"Armor\"","hp":"10"}
 
 {"id":"E27","name":"Planted Feet","art":"null","cost":"6","element":"Iron","rarity":"Common","text":[["Your Decisive abilities cost (2) less"]],"range":"null","subtype":"\"Boon\"","hp":"6"}
 
-{"id":"E28","name":"Iron Maiden","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["Enchanted player can't move"],[""],["This Enchantment can be attacked by the player it enchants"]],"range":"1","subtype":"\"Armor Curse\"","hp":"3"}
+{"id":"E28","name":"Iron Maiden","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["Afflicted player can't move"],["This Affliction can be attacked by the player it enchants"]],"range":"1","subtype":"\"Armor Affliction\"","hp":"3"}
 
-{"id":"P1","name":"Path of Molten Metal","art":"null","cost":"5","element":"Copper","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":\"Copper\",\"text\":\"Take 2 damage\\n\"},\"2\":{\"element\":\"Copper\",\"text\":\"Discard a card\\n\"},\"3\":{\"element\":\"Copper\",\"text\":\"Your next 3 attacks this turn deal +2 damage\\n\"}}"}
+{"id":"P1","name":"Path of Molten Metal","art":"null","cost":"5","element":"Copper","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Take 2 damage\"]]},\"2\":{\"element\":{},\"text\":[[\"Discard a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Your next 3 attacks this turn deal +2 damage\"]]}}"}
 
-{"id":"P2","name":"Path of Victorious Visions","art":"null","cost":"5","element":"Gold","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":\"Gold\",\"text\":\"Mark an enemy of your choice\\n\"},\"2\":{\"element\":\"Gold\",\"text\":\"You gain an initiative token\\n\"},\"3\":{\"element\":\"Gold\",\"text\":\"All marked enemies take +2 damage until end of turn\\n\"}}"}
+{"id":"P2","name":"Path of Victorious Visions","art":"null","cost":"5","element":"Gold","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Mark an enemy of your choice\"]]},\"2\":{\"element\":{},\"text\":[[\"You gain an initiative token\"]]},\"3\":{\"element\":{},\"text\":[[\"All marked enemies take +2 damage until end of turn\"]]}}"}
 
-{"id":"P3","name":"Path of Frivolous Fancies","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":\"Mercury\",\"text\":\"Draw a card\\n\"},\"2\":{\"element\":\"Mercury\",\"text\":\"Draw a card\\n\"},\"3\":{\"element\":\"Mercury\",\"text\":\"Deal damage to target equal to the number of cards in your hand (Range 2)\\n\"}}"}
+{"id":"P3","name":"Path of Frivolous Fancies","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Draw a card\"]]},\"2\":{\"element\":{},\"text\":[[\"Draw a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Deal damage to target equal to the number of cards in your hand (Range 2)\"]]}}"}
 
-{"id":"P4","name":"Path of Consummate Care","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":\"Calcium\",\"text\":\"Up to one ally gains 2 movement tokens\\n\"},\"2\":{\"element\":\"Calcium\",\"text\":\"Up to one different ally gains 2 movement tokens\\n\"},\"3\":{\"element\":\"Calcium\",\"text\":\"Heal all adjacent allies 4 HP\\n\"}}"}
+{"id":"P4","name":"Path of Consummate Care","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Up to one ally gains 2 movement tokens\"]]},\"2\":{\"element\":{},\"text\":[[\"Up to one different ally gains 2 movement tokens\"]]},\"3\":{\"element\":{},\"text\":[[\"Heal all adjacent allies 4 HP\"]]}}"}
 
-{"id":"P5","name":"Path of Leery Lurkings","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":\"Lead\",\"text\":\"Take 2 damage\\n\"},\"2\":{\"element\":\"Lead\",\"text\":\"Discard a card\\n\"},\"3\":{\"element\":\"Lead\",\"text\":\"Your next 3 attacks this turn deal +2 damage\\n\"}}"}
+{"id":"P5","name":"Path of Leery Lurkings","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Take 2 damage\"]]},\"2\":{\"element\":{},\"text\":[[\"Discard a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Your next 3 attacks this turn deal +2 damage\"]]}}"}
 
-{"id":"P6","name":"Path of Staunch Stances","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":\"Iron\",\"text\":\"Take 2 damage\\n\"},\"2\":{\"element\":\"Iron\",\"text\":\"Discard a card\\n\"},\"3\":{\"element\":\"Iron\",\"text\":\"Your next 3 attacks this turn deal +2 damage\\n\"}}"}
+{"id":"P6","name":"Path of Staunch Stances","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Take 2 damage\"]]},\"2\":{\"element\":{},\"text\":[[\"Discard a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Your next 3 attacks this turn deal +2 damage\"]]}}"}
 
 {}
 

@@ -7,12 +7,15 @@ class Summon extends Card
 {
     private $hp;
     private $movement;
+    private $range;
     private $action;
 
-    public function __construct($id, $name, $art, $cost, $element, $rarity, $text, $hp, $movement, $action){
+
+    public function __construct($id, $name, $art, $cost, $element, $rarity, $text, $hp, $movement, $range, $action){
         parent::__construct($id, $name, $art, $cost, $element, $rarity, $text);
         $this->setHP($hp);
         $this->setMovement($movement);
+        $this->setRange($range);
         $this->setAction($action);
     }
 
@@ -32,6 +35,15 @@ class Summon extends Card
         return $this->movement;
     }
 
+    public function setRange($range){
+        $this->range = $range;
+    }
+
+    public function getRange(){
+        return $this->range;
+    }
+
+
 
     public function setAction($action){
         $this->action = $action;
@@ -49,6 +61,7 @@ class Summon extends Card
 
         $array['hp'] = $this->getHP();
         $array['movement'] = $this->getMovement();
+        $array['range'] = $this->getRange();
         $array['action'] = json_encode($this->getAction());
 
         return $array;
