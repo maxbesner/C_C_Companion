@@ -58,7 +58,8 @@ class SummonTemplate extends Template
         $this->createMovement($this->image);
 
 
-        imagejpeg($this->image, $this->imagePath);
+        imagejpeg(imagescale($this->image, $this->totalX, $this->totalY), $this->imagePath);
+
     }
 
     function createMovement($image){

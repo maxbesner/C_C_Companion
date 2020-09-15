@@ -29,18 +29,18 @@ function displayCard($card){
 
 }
 
-   function displayCardRow($cards, $index){?>
-        <?php
-        for($i = $index; $i < $index + 3; $i++){
-            if($i == count($cards)) {
-                return true;
-            }
-            $card = $cards[$i];
-            ?>
-                <img style="display: inline; margin: 0 5px;" src="cardImages/<?php echo $card->getId()?>.jpg" alt ="<?php echo $card->getName()?>">
-            <?php
+function displayCardRow($cards, $index, $cardsPerRow){?>
+    <?php
+    for($i = $index; $i < $index + $cardsPerRow; $i++){
+        if($i == count($cards)) {
+            return true;
         }
+        $card = $cards[$i];
         ?>
+            <img style="display: inline; margin: 0 5px;" src="cardImages/<?php echo $card->getId()?>.jpg" alt ="<?php echo $card->getName()?>" width="225" height="315">
+        <?php
+    }
+    ?>
 
 <?php
 echo '<br>';
@@ -63,10 +63,12 @@ return false;
     $cards = createNumericallyIndexedArray($cards);
     $finished = false;
 
+    $cardsPerRow= 3;
     while(!$finished) {
-    $finished = displayCardRow($cards, $index);
-    $index += 3;
+    $finished = displayCardRow($cards, $index, $cardsPerRow);
+    $index += $cardsPerRow;
     }
 ?>
+
     </html>
 

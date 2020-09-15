@@ -69,7 +69,7 @@ class EnchantmentTemplate extends Template
             $this->createRange($this->image);
         }
 
-        imagejpeg($this->image, $this->imagePath);
+        $this->resize();
     }
 
     function createRange($image){

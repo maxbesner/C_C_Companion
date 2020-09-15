@@ -41,8 +41,11 @@ abstract class Template
     //space between clauses in text
     protected $pixelBuffer;
 
+    protected $totalX = 500;
+    protected $totalY = 700;
+
     function createCard(){
-        $this->imagePath = 'C:/xampp/htdocs/CharacterBuilder/cardImages/'.$this->card->getId().".jpg";
+        $this->imagePath = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/cardImages/'.$this->card->getId().".jpg";
 
         copy($this->template, $this->imagePath);
         $this->image = imagecreatefromjpeg($this->imagePath);
@@ -52,6 +55,17 @@ abstract class Template
         $this->createType($this->image);
         $this->createCost($this->image);
         $this->createRarity($this->image);
+    }
+
+
+    function resize(){
+        //adapted from Herr's post on https://stackoverflow.com/questions/8030200/php-simple-image-resize-after-upload
+        list($width, $height) = getimagesize($this->imagePath);
+        $imageColour = imagecreatetruecolor($this->totalX, $this->totalY);
+        imagecopyresampled($imageColour, $this->image, 0,0,0,0, $this->totalX, $this->totalY, $width, $height);
+
+        imagejpeg($this->image, $this->imagePath);
+
     }
 
 

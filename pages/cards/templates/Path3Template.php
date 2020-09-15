@@ -87,7 +87,7 @@ class Path3Template extends Template
         $this->createSteps($this->image);
 
 
-        imagejpeg($this->image, $this->imagePath);
+        $this->resize();
     }
 
 
