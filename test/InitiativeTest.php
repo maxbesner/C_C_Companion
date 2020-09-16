@@ -5,26 +5,32 @@ use PHPUnit\Framework\TestCase;
 
 class InitiativeTest extends TestCase
 {
-    private $nonInitiativePLayers;
+    private $nonInitiativePlayers;
     private $initiativePlayers;
 
     protected function setUp(){
         $this->initiativePlayers =  Array("Steph", "Klay");
-        $this->nonInitiativePLayers = Array("Me", "Kyrie", "Lebron");
+        $this->nonInitiativePlayers = Array("Me", "Kyrie", "Lebron");
     }
 
     function testInitiative(){
 
 
-        $size = count($this->nonInitiativePLayers);
-        for($i = 0; $i < $size; $i++){
-            $this->nonInitiativePLayers = $this->swap($this->nonInitiativePLayers, $i, rand(0, $size - 1));
-        }
+        $this->nonInitiativePlayers = $this->shuffle($this->nonInitiativePlayers);
 
-        $turnOrder = $this->mergeArrays($this->initiativePlayers, $this->nonInitiativePLayers);
+        $turnOrder = $this->mergeArrays($this->initiativePlayers, $this->nonInitiativePlayers);
 
         print_r($turnOrder);
         $this->assertTrue(true);
+    }
+
+    function shuffle($array){
+        $size = count($array);
+        for($i = 0; $i < $size; $i++){
+            $array = $this->swap($array, $i, rand(0, $i));
+        }
+
+        return $array;
     }
 
     function mergeArrays($array1, $array2){

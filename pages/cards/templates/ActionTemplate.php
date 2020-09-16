@@ -21,8 +21,8 @@ class ActionTemplate extends Template
         $this->nameY = 34;
 
         $this->elementFontSize = 18;
-        $this->elementX = 180;
-        $this->elementY = 50;
+        $this->elementX = 183;
+        $this->elementY = 51;
 
         $this->typeFontSize = 10;
         $this->typeX = 91;

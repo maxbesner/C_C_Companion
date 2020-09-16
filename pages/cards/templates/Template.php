@@ -71,7 +71,10 @@ abstract class Template
 
     function createName($image){
         $color = imagecolorallocate($image, 0, 0, 0);
-        imagettftext($image, $this->nameFontSize, 0, $this->nameX, $this->nameY, $color, $this->fontFile, $this->card->getName());
+
+        $name = $this->card->getName();
+        $this->nameFontSize = $this->formatLine($this->nameFontSize, $this->fontFile, $name, 100);
+        imagettftext($image, $this->nameFontSize, 0, $this->nameX, $this->nameY, $color, $this->fontFile, $name);
     }
 
     function createElement($image){
@@ -236,7 +239,7 @@ abstract class Template
 
         $this->pixelBuffer = $pixelBuffer;
 
-        if($fontSize > 17){
+        if($fontSize > 15){
             $this->pixelBuffer += 3;
         }
     }
@@ -244,7 +247,6 @@ abstract class Template
     function createCost($image){
         if($this->card->getCost() == 10){
             $this->costFontSize = 12;
-            echo $this->card->getName();
         }
         $color = imagecolorallocate($image, 0, 0, 0);
         imagettftext($image, $this->costFontSize, 0, $this->costX, $this->costY, $color, $this->fontFile, $this->card->getCost());

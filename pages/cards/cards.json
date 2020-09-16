@@ -16,11 +16,11 @@
 
 {"id":"A9","name":"One-Two Punch","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["Deal 1 damage"],["Deal 1 damage"]],"range":"1","subtype":"Attack"}
 
-{"id":"A10","name":"Copper Terrain","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Copper Terrain"]],"range":"1","subtype":"Basic Utility"}
+{"id":"A10","name":"Copper Terrain","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Copper Terrain"]],"range":"1","subtype":"Basic"}
 
 {"id":"A11","name":"Bloody Mad","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["Deal 1 damage"],["If you have no cards in hand, deal 3 damage instead"]],"range":"1","subtype":"Attack"}
 
-{"id":"A12","name":"Start the Party","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["Create a Powder Keg"]],"range":"1","subtype":"Utility - Creation"}
+{"id":"A12","name":"Momentum","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["Step X, where X is the number of cards played this turn"]],"range":"1","subtype":"Utility"}
 
 {"id":"A13","name":"Sprint","art":"null","cost":"3","element":"Copper","rarity":"Common","text":[["Step 4"],["Copper Bond: Step 5 instead if you play this card on Copper Terrain"]],"range":"null","subtype":"Utility"}
 
@@ -30,7 +30,7 @@
 
 {"id":"A16","name":"Ground Pound","art":"null","cost":"4","element":"Copper","rarity":"Common","text":[["Deal 1 damage"],["Targeted Terrain becomes Neutral Terrain"]],"range":"1","subtype":"Attack"}
 
-{"id":"A17","name":"Beeline","art":"null","cost":"1","element":"Copper","rarity":"Common","text":[["Step 5"],["Deal 4 damage"]],"range":"1","subtype":"Attack"}
+{"id":"A17","name":"Beeline","art":"null","cost":"8","element":"Copper","rarity":"Common","text":[["Step 5"],["Deal 4 damage"]],"range":"1","subtype":"Attack"}
 
 {"id":"A18","name":"Copper Strike","art":"null","cost":"4","element":"Copper","rarity":"Common","text":[["Deal 2 damage"],["Copper Bond: Deal 4 damage instead"]],"range":"1","subtype":"Attack"}
 
@@ -44,7 +44,7 @@
 
 {"id":"A23","name":"Inspiring Barrage","art":"null","cost":"6","element":"Gold","rarity":"Common","text":[["Deal 1 damage"],["Radiance"],["Up to one ally draws a card for each enemy hit by this attack"]],"range":"Longsword","subtype":"Attack"}
 
-{"id":"A24","name":"Vilification","art":"null","cost":"1","element":"Gold","rarity":"Common","text":[["Radiance"]],"range":"1","subtype":"Utility"}
+{"id":"A24","name":"Vilification","art":"null","cost":"1","element":"Gold","rarity":"Common","text":[["Deal 1 damage"],["Radiance"]],"range":"1","subtype":"Utility"}
 
 {"id":"A25","name":"Motivation","art":"null","cost":"4","element":"Gold","rarity":"Common","text":[["Target draws 2 cards"]],"range":"2","subtype":"Utility"}
 
@@ -56,7 +56,7 @@
 
 {"id":"A29","name":"Gleaming Guidance","art":"null","cost":"6","element":"Gold","rarity":"Common","text":[["Target gains +1 to all attacks during their next turn"],["Gold Bond: That ally instead gains +2 to all attacks during their next turn if you play this card on Gold Terrain"]],"range":"1","subtype":"Attack"}
 
-{"id":"A30","name":"Well of Invigoration","art":"null","cost":"2","element":"Gold","rarity":"Common","text":[["Place a shine counter on target terrain"],["Until end of turn, friendly attacks from shining hexes do +1 damage"]],"range":"5","subtype":"Attack"}
+{"id":"A30","name":"Pep Talk","art":"null","cost":"2","element":"Gold","rarity":"Common","text":[["Target draws a card"]],"range":"3","subtype":"Attack"}
 
 {"id":"A31","name":"Petnapping","art":"null","cost":"8","element":"Gold","rarity":"Common","text":[["Gain control of target summon"]],"range":"1","subtype":"Utility"}
 
@@ -66,13 +66,13 @@
 
 {"id":"A34","name":"Gold Strike","art":"null","cost":"4","element":"Gold","rarity":"Common","text":[["Deal 2 damage"],["Gold Bond: Deal 4 damage instead"]],"range":"1","subtype":"Attack"}
 
-{"id":"A35","name":"Tentacle Whip","art":"null","cost":"1","element":"Mercury","rarity":"Common","text":[["Deal 2 damage"]],"range":"Stretchy 3","subtype":"Attack"}
+{"id":"A35","name":"Tentacle Whip","art":"null","cost":"4","element":"Mercury","rarity":"Common","text":[["Deal 2 damage"]],"range":"Stretchy 3","subtype":"Attack"}
 
 {"id":"A36","name":"Shoot or Shove","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["Deal 2 damage"],["OR"],["Push 3"]],"range":"3","subtype":"Attack\/Utility"}
 
 {"id":"A37","name":"Knowledge or Power","art":"null","cost":"3","element":"Mercury","rarity":"Common","text":[["Draw a card"],["OR"],["Deal 2 damage"]],"range":"1","subtype":"Utility\/Attack"}
 
-{"id":"A38","name":"Slap or Wrap","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["Deal 3 damage"],["OR"],["Deal 2 damage"]],"range":"1 OR Stretchy 3","subtype":"Attack"}
+{"id":"A38","name":"Slap or Wrap","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["Deal 3 damage, Range 1"],["OR"],["Deal 2 damage, Range Stretchy 3"]],"range":"null","subtype":"Attack"}
 
 {"id":"A39","name":"Kraken's Clutch","art":"null","cost":"7","element":"Mercury","rarity":"Common","text":[["Deal damage equal to the number of targets this card damages"]],"range":"Stretchy 4","subtype":"Attack"}
 
@@ -126,7 +126,7 @@
 
 {"id":"A64","name":"The Little Bullet that Could","art":"null","cost":"4","element":"Lead","rarity":"Common","text":[["Deal damage equal to the number of hexes this attack travelled"],["Homing 1"]],"range":"2","subtype":"Attack"}
 
-{"id":"A65","name":"Bullet Odyssey","art":"null","cost":"1","element":"Lead","rarity":"Common","text":[["Deal 4 damage"],["Homing 6"]],"range":"8","subtype":"Attack"}
+{"id":"A65","name":"Bullet Odyssey","art":"null","cost":"10","element":"Lead","rarity":"Common","text":[["Deal 4 damage"],["Homing 6"]],"range":"8","subtype":"Attack"}
 
 {"id":"A66","name":"Poisonous Preservation","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["Heal yourself 3 HP"],["Lead Bond: Heal yourself 5 HP instead"]],"range":"null","subtype":"Utility"}
 
@@ -159,6 +159,16 @@
 {"id":"A80","name":"Huge Shot","art":"null","cost":"10","element":"Iron","rarity":"Common","text":[["Deal 8 damage"]],"range":"1","subtype":"Attack"}
 
 {"id":"A81","name":"Iron Strike","art":"null","cost":"4","element":"Iron","rarity":"Common","text":[["Deal 2 damage"],["Iron Bond: Deal 4 damage instead"]],"range":"1","subtype":"Attack"}
+
+{"id":"A82","name":"Iron Terrain","art":"null","cost":"3","element":"Iron","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Iron Terrain"]],"range":"1","subtype":"Basic"}
+
+{"id":"A83","name":"Mercury Terrain","art":"null","cost":"3","element":"Mercury","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Mercury Terrain"]],"range":"1","subtype":"Basic"}
+
+{"id":"A84","name":"Calcium Terrain","art":"null","cost":"3","element":"Calcium","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Calcium Terrain"]],"range":"1","subtype":"Basic"}
+
+{"id":"A85","name":"Gold Terrain","art":"null","cost":"3","element":"Gold","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Gold Terrain"]],"range":"1","subtype":"Basic"}
+
+{"id":"A86","name":"Lead Terrain","art":"null","cost":"3","element":"Lead","rarity":"Common","text":[["This card has no elemental requirement"],["Create a Lead Terrain"]],"range":"1","subtype":"Basic"}
 
 {"id":"E1","name":"Fuckin' Boots","art":"null","cost":"6","element":"Copper","rarity":"Common","text":[["You gain +2 movement each turn"]],"range":"null","subtype":"\"Boon\"","hp":"3"}
 
@@ -224,9 +234,9 @@
 
 {"id":"P4","name":"Path of Consummate Care","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Up to one ally gains 2 movement tokens\"]]},\"2\":{\"element\":{},\"text\":[[\"Up to one different ally gains 2 movement tokens\"]]},\"3\":{\"element\":{},\"text\":[[\"Heal all adjacent allies 4 HP\"]]}}"}
 
-{"id":"P5","name":"Path of Leery Lurkings","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Take 2 damage\"]]},\"2\":{\"element\":{},\"text\":[[\"Discard a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Your next 3 attacks this turn deal +2 damage\"]]}}"}
+{"id":"P5","name":"Path of Leery Lurkings","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Heal 3 HP\"]]},\"2\":{\"element\":{},\"text\":[[\"Deal 2 damage (Range 3)\"]]},\"3\":{\"element\":{},\"text\":[[\"Deal 3 damage (Range 5)\"]]}}"}
 
-{"id":"P6","name":"Path of Staunch Stances","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Take 2 damage\"]]},\"2\":{\"element\":{},\"text\":[[\"Discard a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Your next 3 attacks this turn deal +2 damage\"]]}}"}
+{"id":"P6","name":"Path of Staunch Stances","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Create an Iron Terrain (Range 1)\"]]},\"2\":{\"element\":{},\"text\":[[\"Pull 3 (Range 3)\"]]},\"3\":{\"element\":{},\"text\":[[\"Deal 5 damage (Range 1)\"]]}}"}
 
 {}
 

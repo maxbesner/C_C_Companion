@@ -120,7 +120,7 @@ Common
     This card has no elemental requirement
     Create a Copper Terrain
 End
-Basic Utility
+Basic
 1
 
 Action
@@ -138,14 +138,14 @@ Attack
 
 Action
 A12
-Start the Party
+Momentum
 null
 3
 Copper
 Common
-    Create a Powder Keg
+    Step X, where X is the number of cards played this turn
 End
-Utility - Creation
+Utility
 1
 
 Action
@@ -204,7 +204,7 @@ Action
 A17
 Beeline
 null
-1
+8
 Copper
 Common
     Step 5
@@ -298,6 +298,7 @@ null
 1
 Gold
 Common
+    Deal 1 damage
     Radiance
 End
 Utility
@@ -369,16 +370,15 @@ Attack
 
 Action
 A30
-Well of Invigoration
+Pep Talk
 null
 2
 Gold
 Common
-    Place a shine counter on target terrain
-    Until end of turn, friendly attacks from shining hexes do +1 damage
+    Target draws a card
 End
 Attack
-5
+3
 
 Action
 A31
@@ -433,7 +433,7 @@ Action
 A35
 Tentacle Whip
 null
-1
+4
 Mercury
 Common
     Deal 2 damage
@@ -476,12 +476,12 @@ null
 5
 Mercury
 Common
-    Deal 3 damage
+    Deal 3 damage, Range 1
     OR
-    Deal 2 damage
+    Deal 2 damage, Range Stretchy 3
 End
 Attack
-1 OR Stretchy 3
+null
 
 Action
 A39
@@ -818,7 +818,7 @@ Action
 A65
 Bullet Odyssey
 null
-1
+10
 Lead
 Common
     Deal 4 damage
@@ -1030,6 +1030,71 @@ Common
     Iron Bond: Deal 4 damage instead
 End
 Attack
+1
+
+Action
+A82
+Iron Terrain
+null
+3
+Iron
+Common
+    This card has no elemental requirement
+    Create a Iron Terrain
+End
+Basic
+1
+
+Action
+A83
+Mercury Terrain
+null
+3
+Mercury
+Common
+    This card has no elemental requirement
+    Create a Mercury Terrain
+End
+Basic
+1
+
+Action
+A84
+Calcium Terrain
+null
+3
+Calcium
+Common
+    This card has no elemental requirement
+    Create a Calcium Terrain
+End
+Basic
+1
+
+Action
+A85
+Gold Terrain
+null
+3
+Gold
+Common
+    This card has no elemental requirement
+    Create a Gold Terrain
+End
+Basic
+1
+
+Action
+A86
+Lead Terrain
+null
+3
+Lead
+Common
+    This card has no elemental requirement
+    Create a Lead Terrain
+End
+Basic
 1
 
 Enchantment
@@ -1504,15 +1569,15 @@ Common
 End
 1
     Lead
-    Take 2 damage
+    Heal 3 HP
 End
 2
     Lead
-    Discard a card
+    Deal 2 damage (Range 3)
 End
 3
     Lead
-    Your next 3 attacks this turn deal +2 damage
+    Deal 3 damage (Range 5)
 End
 Stop
 
@@ -1527,15 +1592,15 @@ Common
 End
 1
     Iron
-    Take 2 damage
+    Create an Iron Terrain (Range 1)
 End
 2
     Iron
-    Discard a card
+    Pull 3 (Range 3)
 End
 3
     Iron
-    Your next 3 attacks this turn deal +2 damage
+    Deal 5 damage (Range 1)
 End
 Stop
 

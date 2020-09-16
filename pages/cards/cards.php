@@ -65,8 +65,8 @@ return false;
 
     $cardsPerRow= 3;
     while(!$finished) {
-    $finished = displayCardRow($cards, $index, $cardsPerRow);
-    $index += $cardsPerRow;
+        $finished = displayCardRow($cards, $index, $cardsPerRow);
+        $index += $cardsPerRow;
     }
 ?>
 
