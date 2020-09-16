@@ -19,7 +19,7 @@ class Questions
 
     public function loadQuestionsFromFile($onlyTraits)
     {
-        $f = "C:/xampp/htdocs/CharacterBuilder/dao/questions.txt";
+        $f = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/questions.txt';
         $file = fopen($f, "r") or die("Unable to open file");
 
         while(!feof($file))

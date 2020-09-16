@@ -1,7 +1,7 @@
 <?php
 
 include_once('Questions.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/user/Character.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/Character.php');
 
 session_start();
 

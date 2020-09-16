@@ -1,6 +1,6 @@
 <?php
 
-include_once 'C:/xampp/htdocs/CharacterBuilder/pages/ElementList.php';
+include_once $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -10,16 +10,16 @@ class CreateTemplatesTest extends TestCase
     protected $goldColourRangeLower = 12000000;
     protected $goldColourRangeUpper = 14500000;
 
-    protected $goldActionRangeFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRangeInitial.jpg';
+    protected $goldActionRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRangeInitial.jpg';
     protected $goldActionRangeImage;
 
-    protected $goldEnchantmentRangeFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
+    protected $goldEnchantmentRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
     protected $goldEnchantmentRangeImage;
 
-    protected $goldSummonFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
+    protected $goldSummonFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
     protected $goldSummonImage;
 
-    protected $goldPathFileName = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
+    protected $goldPathFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
     protected $goldPathImage;
 
 
@@ -49,7 +49,7 @@ class CreateTemplatesTest extends TestCase
 
     function testSummonColourSwap(){
         foreach($this->elements as $element){
-            $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Summon.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Summon.jpg';
             copy($this->goldSummonFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -62,7 +62,7 @@ class CreateTemplatesTest extends TestCase
 
     function testPath3ColourSwap(){
         foreach($this->elements as $element){
-            $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Path3.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Path3.jpg';
             copy($this->goldPathFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -76,7 +76,7 @@ class CreateTemplatesTest extends TestCase
 
     function EnchantmentColourSwap(){
         foreach($this->elements as $element){
-            $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
             copy($this->goldEnchantmentRangeFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -90,7 +90,7 @@ class CreateTemplatesTest extends TestCase
     function /*test*/ActionColourSwap(){
 
         foreach($this->elements as $element){
-            $imageCopyFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
             copy($this->goldActionRangeFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -127,7 +127,7 @@ class CreateTemplatesTest extends TestCase
     }
 
     function imageGetColours(){
-        $imageFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRange.jpg';
+        $imageFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRange.jpg';
         $image = imagecreatefromjpeg($imageFile);
 
         list($width, $height) = getimagesize($imageFile);
@@ -151,8 +151,8 @@ class CreateTemplatesTest extends TestCase
 
     function /*test*/CreateActionNoRange(){
         foreach($this->elements as $element){
-            $imageCopySourceFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
-            $imageCopyDestFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionNoRange.jpg';
+            $imageCopySourceFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
+            $imageCopyDestFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionNoRange.jpg';
             copy($imageCopySourceFile, $imageCopyDestFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyDestFile);
@@ -166,8 +166,8 @@ class CreateTemplatesTest extends TestCase
 
     function /*test*/CreateEnchantmentNoRange(){
         foreach($this->elements as $element){
-            $imageCopySourceFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
-            $imageCopyDestFile = 'C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentNoRange.jpg';
+            $imageCopySourceFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
+            $imageCopyDestFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentNoRange.jpg';
             copy($imageCopySourceFile, $imageCopyDestFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyDestFile);

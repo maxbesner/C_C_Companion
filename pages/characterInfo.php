@@ -1,15 +1,15 @@
 <?php
 
 include_once('SessionManager.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/user/User.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/user/Character.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/Character.php');
 
 $sessionManager = new SessionManager();
 
 $sessionManager->requireLogin();
 
 $page_title = "Character Info";
-include_once("header.php");
+include_once('header.php');
 
 $character = $_SESSION['user']->getCharacter($_GET['id']);
 

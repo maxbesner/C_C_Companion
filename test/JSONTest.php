@@ -14,7 +14,7 @@ class JSONTest extends TestCase
 
     function testMakeJSON(){
 
-        $file ='C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.json';
+        $file =$_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cards.json';
 
         file_put_contents($file, "");
         $current = file_get_contents($file);
@@ -32,7 +32,7 @@ class JSONTest extends TestCase
 
     function /*test*/DecodeJSON(){
 
-        $file ='C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.json';
+        $file =$_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cards.json';
 
         $current = file_get_contents($file);
 

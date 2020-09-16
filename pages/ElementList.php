@@ -12,7 +12,7 @@ class ElementList
 
     private function loadElementsFromFile()
     {
-        $f = "C:/xampp/htdocs/CharacterBuilder/pages/elements.txt";
+        $f = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/elements.txt';
         $file = fopen($f, "r") or die("Unable to open file");
 
         while(!feof($file))

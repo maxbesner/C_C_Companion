@@ -1,6 +1,6 @@
 
 <?php
-require_once('C:/xampp/htdocs/CharacterBuilder/dao/UserDAO.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/UserDAO.php');
 session_start();
 if(isset($_SESSION['user']))
 {

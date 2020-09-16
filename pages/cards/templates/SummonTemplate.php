@@ -16,7 +16,7 @@ class SummonTemplate extends Template
     public function __construct($card){
         $this->card = $card;
 
-        $this->fontFile = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/fonts/times.ttf";
+        $this->fontFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/fonts/times.ttf';
 
         $this->nameFontSize = 14;
         $this->nameX = 26;
@@ -44,7 +44,7 @@ class SummonTemplate extends Template
         $this->textYBottom = 358;
         $this->textFontSize = 18;
 
-        $this->template = "C:/xampp/htdocs/CharacterBuilder/pages/cards/templates/templateImages/".$card->getElement()->getName().get_class($card).".jpg";
+        $this->template = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$card->getElement()->getName().get_class($card).".jpg";
 
 
     }

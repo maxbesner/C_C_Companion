@@ -1,8 +1,8 @@
 <?php
 
-include_once('C:/xampp/htdocs/CharacterBuilder/user/User.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/dao/CharacterDAO.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/dao/QuestionsDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/CharacterDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/QuestionsDAO.php');
 
 
 function setTraits($character, $questions)

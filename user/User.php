@@ -1,8 +1,8 @@
 <?php
-include_once('C:/xampp/htdocs/CharacterBuilder/dao/UserDAO.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/dao/CharacterDAO.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/pages/Element.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/pages/ElementList.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/UserDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/CharacterDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/Element.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php');
 
 class User
 {

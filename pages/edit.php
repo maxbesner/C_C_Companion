@@ -1,6 +1,6 @@
 <?php
 
-require_once('C:/xampp/htdocs/CharacterBuilder/user/Character.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/Character.php');
 
 session_start();
 

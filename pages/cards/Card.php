@@ -7,8 +7,8 @@ include_once('Step.php');
 include_once('Summon.php');
 include_once('SummonAction.php');
 
-include_once('C:/xampp/htdocs/CharacterBuilder/pages/ElementList.php');
-include_once('C:/xampp/htdocs/CharacterBuilder/pages/Element.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/Element.php');
 
 class Card
 {
@@ -38,7 +38,7 @@ class Card
 
         $cards = array();
 
-        $f = "C:/xampp/htdocs/CharacterBuilder/pages/cards/cards.txt";
+        $f = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cards.txt';
         $file = fopen($f, "r") or die("Unable to open file");
 
         while(!feof($file))

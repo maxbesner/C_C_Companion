@@ -1,5 +1,5 @@
 <?php
-    require_once('C:/xampp/htdocs/CharacterBuilder/user/User.php');
+    require_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
 
     session_start();
     if(isset($_SESSION['user']))
