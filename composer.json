@@ -13,8 +13,8 @@
     "phpunit/phpunit": "^7",
     "ext-gd": "*",
     "php-debug/debugger": "v0.1.0",
-    "ext-json": "*",
-    "mpdf/mpdf":"7.*"
-  }
+    "ext-json": "*"
+  },
+
 
 }

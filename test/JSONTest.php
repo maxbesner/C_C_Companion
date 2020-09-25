@@ -10,7 +10,11 @@ class JSONTest extends TestCase
 
     function setUp(){
         $this->cards = Card::loadCardsFromFile();
+
+
     }
+
+
 
     function testMakeJSON(){
 
@@ -19,9 +23,20 @@ class JSONTest extends TestCase
         file_put_contents($file, "");
         $current = file_get_contents($file);
 
+        $current.= "[\n";
+
+        $started = false;
         foreach($this->cards as $card){
-            $current .= json_encode($card)."\n\n";
+            if($started){
+                $current .= ",\n\n\t".json_encode($card);
+            }else{
+                $current.= "\t".json_encode($card);
+                $started = true;
+            }
+
         }
+
+        $current.= "\n]";
 
         file_put_contents($file, $current);
 

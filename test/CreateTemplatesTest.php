@@ -10,16 +10,16 @@ class CreateTemplatesTest extends TestCase
     protected $goldColourRangeLower = 12000000;
     protected $goldColourRangeUpper = 14500000;
 
-    protected $goldActionRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRangeInitial.jpg';
+    protected $goldActionRangeFileName;
     protected $goldActionRangeImage;
 
-    protected $goldEnchantmentRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
+    protected $goldEnchantmentRangeFileName;
     protected $goldEnchantmentRangeImage;
 
-    protected $goldSummonFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
+    protected $goldSummonFileName;
     protected $goldSummonImage;
 
-    protected $goldPathFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
+    protected $goldPathFileName;
     protected $goldPathImage;
 
 
@@ -39,13 +39,20 @@ class CreateTemplatesTest extends TestCase
 
 
     protected function setup(){
+
+        $this->goldActionRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRangeInitial.jpg';
+        $this->goldEnchantmentRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
+        $this->goldSummonFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
+        $this->goldPathFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
+
         $this->goldActionRangeImage = imagecreatefromjpeg($this->goldActionRangeFileName);
 
         $elementList = new ElementList();
         $this->elements = $elementList->getElements();
 
-    }
 
+
+    }
 
     function testSummonColourSwap(){
         foreach($this->elements as $element){

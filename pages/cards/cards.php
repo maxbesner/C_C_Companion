@@ -7,7 +7,6 @@ include_once('Path.php');
 include_once('Step.php');
 include_once('Summon.php');
 include_once('SummonAction.php');
-include_once('header.php');
 include_once('./templates/ActionTemplate.php');
 
 function createNumericallyIndexedArray($array){
@@ -56,7 +55,11 @@ return false;
             <title>Cards</title>
         </head>
 
+
+
 <?php
+
+    include_once($_SERVER['DOCUMENT_ROOT'].'/CharacterBuilder/pages/header.php');
     $index = 0;
     $cards= Card::loadCardsFromFile();
 
@@ -68,6 +71,8 @@ return false;
         $finished = displayCardRow($cards, $index, $cardsPerRow);
         $index += $cardsPerRow;
     }
+
+include_once($_SERVER['DOCUMENT_ROOT'].'/CharacterBuilder/pages/footer.php');
 ?>
 
     </html>

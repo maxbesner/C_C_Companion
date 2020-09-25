@@ -54,7 +54,7 @@ null
 2
 Copper
 Common
-    Step 2
+    Move up to 2
     Deal 1 damage
 End
 Attack
@@ -67,7 +67,7 @@ null
 2
 Copper
 Common
-    Step 3
+    Move up to 3
 End
 Utility
 null
@@ -143,7 +143,7 @@ null
 3
 Copper
 Common
-    Step X, where X is the number of cards played this turn
+    Move up to X, where X is the number of cards played this turn
 End
 Utility
 1
@@ -155,8 +155,8 @@ null
 3
 Copper
 Common
-    Step 4
-    Copper Bond: Step 5 instead if you play this card on Copper Terrain
+    Move up to 4
+    Copper Bond: Move up to 5 instead if you play this card on Copper Terrain
 End
 Utility
 null
@@ -168,7 +168,7 @@ null
 4
 Copper
 Common
-    Step 3
+    Move up to 3
     Deal 2 damage
 End
 Attack
@@ -207,7 +207,7 @@ null
 8
 Copper
 Common
-    Step 5
+    Move up to 5
     Deal 4 damage
 End
 Attack
@@ -431,15 +431,16 @@ Attack
 
 Action
 A35
-Tentacle Whip
+Gold Terrain
 null
-4
-Mercury
+3
+Gold
 Common
-    Deal 2 damage
+    This card has no elemental requirement
+    Create a Gold Terrain
 End
-Attack
-Stretchy 3
+Basic
+1
 
 Action
 A36
@@ -597,29 +598,28 @@ Attack
 
 Action
 A48
-Violent Traige
+Mercury Terrain
 null
-4
-Calcium
+3
+Mercury
 Common
-    Deal 2 damage
-    Drain
+    This card has no elemental requirement
+    Create a Mercury Terrain
 End
-Attack
+Basic
 1
 
 Action
 A49
-Unwilling Transfusion
+Tentacle Whip
 null
-7
-Calcium
+4
+Mercury
 Common
-    Deal 3 damage
-    Drain
+    Deal 2 damage
 End
 Attack
-2
+Stretchy 3
 
 Action
 A50
@@ -751,42 +751,42 @@ Attack
 
 Action
 A60
-Smart Strike
-null
-6
-Lead
-Common
-    Deal 3 damage
-    Homing 1
-End
-Attack
-6
-
-Action
-A61
-Heat Seeker
+Violent Traige
 null
 4
-Lead
+Calcium
 Common
     Deal 2 damage
-    Homing 3
-End
-Attack
-6
-
-Action
-A62
-Get Back
-null
-4
-Lead
-Common
-    Deal 1 damage
-    Push 4
+    Drain
 End
 Attack
 1
+
+Action
+A61
+Calcium Terrain
+null
+3
+Calcium
+Common
+    This card has no elemental requirement
+    Create a Calcium Terrain
+End
+Basic
+1
+
+Action
+A62
+Unwilling Transfusion
+null
+7
+Calcium
+Common
+    Deal 3 damage
+    Drain
+End
+Attack
+2
 
 Action
 A63
@@ -893,51 +893,52 @@ Attack
 
 Action
 A71
-Squash
+Smart Strike
 null
-4
-Iron
+6
+Lead
 Common
     Deal 3 damage
+    Homing 1
 End
 Attack
-1
+6
 
 Action
 A72
-Hammer Fall
+Lead Terrain
 null
-5
-Iron
+3
+Lead
 Common
-    Deal 3 damage
-    Decisive (3): Deal 5 damage instead
+    This card has no elemental requirement
+    Create a Lead Terrain
 End
-Attack
+Basic
 1
 
 Action
 A73
-Planted Strike
+Heat Seeker
 null
-3
-Iron
+4
+Lead
 Common
     Deal 2 damage
-    Decisive (5): Deal 5 damage instead
+    Homing 3
 End
 Attack
-1
+6
 
 Action
 A74
-Great Swing
+Get Back
 null
 4
-Iron
+Lead
 Common
-    Deal 2 damage
-    Decisive (5) Deal 6 damage instead
+    Deal 1 damage
+    Push 4
 End
 Attack
 1
@@ -1047,54 +1048,53 @@ Basic
 
 Action
 A83
-Mercury Terrain
+Squash
 null
-3
-Mercury
+4
+Iron
 Common
-    This card has no elemental requirement
-    Create a Mercury Terrain
+    Deal 3 damage
 End
-Basic
+Attack
 1
 
 Action
 A84
-Calcium Terrain
+Hammer Fall
 null
-3
-Calcium
+5
+Iron
 Common
-    This card has no elemental requirement
-    Create a Calcium Terrain
+    Deal 3 damage
+    Decisive (3): Deal 5 damage instead
 End
-Basic
+Attack
 1
 
 Action
 A85
-Gold Terrain
+Planted Strike
 null
 3
-Gold
+Iron
 Common
-    This card has no elemental requirement
-    Create a Gold Terrain
+    Deal 2 damage
+    Decisive (5): Deal 5 damage instead
 End
-Basic
+Attack
 1
 
 Action
 A86
-Lead Terrain
+Great Swing
 null
-3
-Lead
+4
+Iron
 Common
-    This card has no elemental requirement
-    Create a Lead Terrain
+    Deal 2 damage
+    Decisive (5) Deal 6 damage instead
 End
-Basic
+Attack
 1
 
 Enchantment

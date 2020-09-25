@@ -26,6 +26,8 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="characterCreation.php">Create a Character</a></li>
                         <li><a href="myCharacters.php">My Characters</a></li>
+                        <li><a href="cards/cards.php?">Cards</a></li>
+                        <li><a href="gameHelper.php?">Game Helper</a></li>
                         <li><a href="login.php">Login</a></li>
                         <li><a href="logout.php">Logout</a></li>
                         <li><a href="confirmDelete.php">Delete Account</a></li>

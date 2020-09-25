@@ -55,7 +55,12 @@ class CardMarkUpTest extends PHPUnit\Framework\TestCase
 
         }
 
+
+
+
     }
+
+
 
 
     //toggle test with test name
@@ -64,7 +69,7 @@ class CardMarkUpTest extends PHPUnit\Framework\TestCase
 
         foreach($elements->getElements() as $element){
             foreach(CardTypes::getCardTypes() as $type){
-                mkdir($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/".strtolower($element->getName())."/".strtolower($type),0777, true);
+                mkdir($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.strtolower($element->getName())."/".strtolower($type),0777, true);
             }
         }
 

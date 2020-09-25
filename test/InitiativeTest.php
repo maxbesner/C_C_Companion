@@ -11,6 +11,7 @@ class InitiativeTest extends TestCase
     protected function setUp(){
         $this->initiativePlayers =  Array("Steph", "Klay");
         $this->nonInitiativePlayers = Array("Me", "Kyrie", "Lebron");
+
     }
 
     function testInitiative(){
