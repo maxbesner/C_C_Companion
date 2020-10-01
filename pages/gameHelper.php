@@ -1,7 +1,7 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/SessionManager.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/Player.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/SessionManager.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Player.php');
 
 
 $sessionManager = new SessionManager();
@@ -26,10 +26,8 @@ $players = getPlayers($playerNames);
 
 <h3>Players</h3>
 
+<div class="container">
 <?php
-
-
-
 writePlayers($players);
 
 writeEmptyInitiative($players);
@@ -37,6 +35,7 @@ writeEmptyInitiative($players);
 writeEmptyTurnOrder($players);
 
 ?>
+</div>
 <button onclick="start()">Start</button><button onclick="newTurn()">New Turn</button>
 
 <?php
@@ -56,10 +55,11 @@ function getPlayers($playerNames){
 function writePlayers($players){
     foreach($players as $player){
         ?>
-        <h3><?php echo $player->getName()?></h3>
-        <div>HP: <label for="<?php echo $player->getId().'hp'?>"></label><input type="text" id="<?php echo $player->getId().'hp'?>" value="<?php echo $player->getHP()?>"><button onclick="decrementHPBy5(<?php echo $player->getId()?>)">-5</button><button onclick="decrementHP(<?php echo $player->getId()?>)">-1</button><button onclick="incrementHP(<?php echo $player->getId()?>)">+1</button><button onclick="incrementHPBy5(<?php echo $player->getId()?>)">+5</button></div>
-        <br>
-        <button onclick="addToInitiative(<?php echo $player->getId()?>)">Gain Initiative</button><button onclick="removeFromInitiative(<?php echo $player->getId()?>)">ResetInitiative</button>
+        <div class="row">
+            <div class="col-sm-1"><?php echo $player->getName()?></div>
+            <div class="col-sm-6">HP: <label for="<?php echo $player->getId().'hp'?>"></label><input type="text" id="<?php echo $player->getId().'hp'?>" value="<?php echo $player->getHP()?>"><button onclick="decrementHPBy5(<?php echo $player->getId()?>)">-5</button><button onclick="decrementHP(<?php echo $player->getId()?>)">-1</button><button onclick="incrementHP(<?php echo $player->getId()?>)">+1</button><button onclick="incrementHPBy5(<?php echo $player->getId()?>)">+5</button></div>
+            <div class="col-sm-5"><button onclick="addToInitiative(<?php echo $player->getId()?>)">Gain Initiative</button><button onclick="removeFromInitiative(<?php echo $player->getId()?>)">Reset Initiative</button></div>
+        </div>
         <?php
     }
 }

@@ -18,6 +18,7 @@ class UserDAO extends abstractDAO
         $this->characterDAO = new CharacterDAO();
     }
 
+    //Adds user to database if username, password combination does not exist in database
     public function addUser($username, $password)
     {
         $loginQuery = 'SELECT * FROM character_builder_user WHERE username = ?';
@@ -43,6 +44,7 @@ class UserDAO extends abstractDAO
         return $username."already exists";
     }
 
+    //Archives user and associated data, then deletes user from active user table
     public function deleteUser($userid)
     {
         if (!$this->mysqli->connect_errno) {
@@ -65,6 +67,7 @@ class UserDAO extends abstractDAO
         }
     }
 
+    //Adds user and all associated data to the archive table. Used when deleting user from active user table
     private function archiveUser($userid)
     {
 
@@ -76,6 +79,7 @@ class UserDAO extends abstractDAO
         $this->characterDAO->archiveCharacters($userid);
     }
 
+    //Verifies the username, password combination exists in the database
     public function authenticate($username, $password)
     {
         $loginQuery = 'SELECT * FROM character_builder_user WHERE username = ?';
@@ -95,6 +99,7 @@ class UserDAO extends abstractDAO
         return null;
     }
 
+    //Verifies whether the user has admin privileges
     public function isAdmin($user)
     {
         $verificationQuery = 'SELECT * FROM character_builder_user WHERE user_id = ? && isAdmin = true';

@@ -1,8 +1,8 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/UserDAO.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/CharacterDAO.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/Element.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/dao/UserDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/dao/CharacterDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Element.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/ElementList.php');
 
 class User
 {
@@ -21,6 +21,13 @@ class User
         $this->characterDAO = new CharacterDAO();
     }
 
+    /**
+     * Checks to see if record of User exists in database. If
+     * a record does exist, updates the User's fields to be equal to
+     * the fields in the database
+     * @param $username
+     * @param $password
+     */
     public function authenticate($username, $password)
     {
         $id = $this->userDAO->authenticate($username, $password);
@@ -36,11 +43,19 @@ class User
     }
 
 
+    /**
+     * @param $id
+     * The User's database id
+     */
     public function setId($id)
     {
         $this->id = $id;
     }
 
+    /**
+     * @return mixed
+     * The User's database id
+     */
     public function getId()
     {
         return $this->id;
@@ -56,17 +71,31 @@ class User
         return $this->username;
     }
 
+    /**
+     * Retrieves the list of Characters belonging to the User from the database and sets their Characters array to it
+     */
     public function setCharacters()
     {
         $this->characters = $this->characterDAO->getCharacters($this->getId());
     }
 
 
+    /**
+     * @param $character
+     * A Character being added to the User's list of Characters
+     */
     public function addCharacter($character)
     {
         $this->characters[$character->getId()] = $character;
     }
 
+    /**
+     * @param $characterId
+     * The character id of the character being searched for
+     *
+     * @return false|mixed
+     * The character being search for or false if it does not exist
+     */
     public function getCharacter($characterId)
     {
         if(array_key_exists($characterId, $this->getCharacters()))
@@ -76,11 +105,19 @@ class User
         return false;
     }
 
+    /**
+     * @return array
+     * All Characters belong to User
+     */
     public function getCharacters()
     {
         return $this->characters;
     }
 
+    /**
+     * @return bool
+     * Whether or not the User exists in the database
+     */
     public function isAuthenticated()
     {
         return $this->authenticated;

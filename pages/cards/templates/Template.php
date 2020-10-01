@@ -1,6 +1,6 @@
 <?php
 
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/Subtyped.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/Subtyped.php');
 abstract class Template
 {
     protected $card;
@@ -45,7 +45,7 @@ abstract class Template
     protected $totalY = 700;
 
     function createCard(){
-        $this->imagePath = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cardImages/'.$this->card->getId().".jpg";
+        $this->imagePath = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cardImages/'.$this->card->getId().".jpg";
 
         copy($this->template, $this->imagePath);
         $this->image = imagecreatefromjpeg($this->imagePath);

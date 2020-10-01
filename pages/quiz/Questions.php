@@ -19,7 +19,7 @@ class Questions
 
     public function loadQuestionsFromFile($onlyTraits)
     {
-        $f = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/questions.txt';
+        $f = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/dao/questions.txt';
         $file = fopen($f, "r") or die("Unable to open file");
 
         while(!feof($file))

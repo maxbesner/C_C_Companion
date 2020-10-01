@@ -1,6 +1,6 @@
 <?php
 include_once('SessionManager.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
 
 $sessionManager = new SessionManager();
 

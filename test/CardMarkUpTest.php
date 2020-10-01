@@ -1,15 +1,15 @@
 <?php
 
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/ActionTemplate.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/EnchantmentTemplate.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/SummonTemplate.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/Path3Template.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/ActionTemplate.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/EnchantmentTemplate.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/SummonTemplate.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/Path3Template.php');
 
 
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/Card.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/Element.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/CardTypes.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/Card.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/ElementList.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Element.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/CardTypes.php');
 
 class CardMarkUpTest extends PHPUnit\Framework\TestCase
 {
@@ -69,7 +69,7 @@ class CardMarkUpTest extends PHPUnit\Framework\TestCase
 
         foreach($elements->getElements() as $element){
             foreach(CardTypes::getCardTypes() as $type){
-                mkdir($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.strtolower($element->getName())."/".strtolower($type),0777, true);
+                mkdir($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.strtolower($element->getName())."/".strtolower($type),0777, true);
             }
         }
 

@@ -13,11 +13,12 @@ $user = $_SESSION['user'];
 $page_title = "My Characters";
 include_once('header.php');
 
+//Get array of all characters belonging to user
 $characters = $user->getCharacters();
 
 echo '<table border=\'1\'>';
-echo '<tr><th>Customer ID</th><th>Customer Name</th><th>Phone Number</th><th>Email Address</th></tr>';
 
+//Create a table of consisting of the characters
 foreach($characters as $character)
 {
     echo '<tr>';

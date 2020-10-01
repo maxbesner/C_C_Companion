@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php';
+include_once $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/ElementList.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -40,23 +40,20 @@ class CreateTemplatesTest extends TestCase
 
     protected function setup(){
 
-        $this->goldActionRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRangeInitial.jpg';
-        $this->goldEnchantmentRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
-        $this->goldSummonFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
-        $this->goldPathFileName = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
+        //The paths of the templates being used for recolouring
+        $this->goldActionRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/GoldActionRangeInitial.jpg';
+        $this->goldEnchantmentRangeFileName = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/GoldEnchantmentRangeInitial.jpg';
+        $this->goldSummonFileName = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/GoldSummonInitial.jpg';
+        $this->goldPathFileName = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/GoldPath3Initial.jpg';
 
-        $this->goldActionRangeImage = imagecreatefromjpeg($this->goldActionRangeFileName);
-
+        //Get the list of 6 element objects
         $elementList = new ElementList();
         $this->elements = $elementList->getElements();
-
-
-
     }
 
     function testSummonColourSwap(){
         foreach($this->elements as $element){
-            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Summon.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'Summon.jpg';
             copy($this->goldSummonFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -69,7 +66,7 @@ class CreateTemplatesTest extends TestCase
 
     function testPath3ColourSwap(){
         foreach($this->elements as $element){
-            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'Path3.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'Path3.jpg';
             copy($this->goldPathFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -83,7 +80,7 @@ class CreateTemplatesTest extends TestCase
 
     function EnchantmentColourSwap(){
         foreach($this->elements as $element){
-            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
             copy($this->goldEnchantmentRangeFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -97,7 +94,7 @@ class CreateTemplatesTest extends TestCase
     function /*test*/ActionColourSwap(){
 
         foreach($this->elements as $element){
-            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
+            $imageCopyFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
             copy($this->goldActionRangeFileName, $imageCopyFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyFile);
@@ -109,12 +106,27 @@ class CreateTemplatesTest extends TestCase
     }
 
 
+    /**
+     *
+     * @param $image
+     * The template image being recoloured
+     * @param $imageFile
+     * The file path to the image
+     * @param $newColour
+     * The colour replacing gold
+     * @return mixed
+     * The recoloured image object
+     */
     function colourSwap($image, $imageFile, $newColour){
+        //Get the pixel dimensions of the image
         list($width, $height) = getimagesize($imageFile);
 
+        //Iterate through all pixels, swapping all gold pixels with the pixels
+        //of the desired colour
         for($i = 0; $i < $width; $i++){
             for($j = 0; $j < $height; $j++){
                 $colour = imagecolorat($image, $i, $j);
+                //Verify if pixel colour is gold
                 if($colour > $this->goldColourRangeLower && $colour < $this->goldColourRangeUpper){
                     imagesetpixel($image, $i, $j, $newColour);
                 }
@@ -134,7 +146,7 @@ class CreateTemplatesTest extends TestCase
     }
 
     function imageGetColours(){
-        $imageFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/GoldActionRange.jpg';
+        $imageFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/GoldActionRange.jpg';
         $image = imagecreatefromjpeg($imageFile);
 
         list($width, $height) = getimagesize($imageFile);
@@ -157,14 +169,26 @@ class CreateTemplatesTest extends TestCase
     }
 
     function /*test*/CreateActionNoRange(){
+
+        //For each element create an action with no range by filling in the
+        //range box with the element's colour
         foreach($this->elements as $element){
-            $imageCopySourceFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
-            $imageCopyDestFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'ActionNoRange.jpg';
+            //The path of the image used to create the new image
+            $imageCopySourceFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'ActionRange.jpg';
+
+            //The path of the image being created
+            $imageCopyDestFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'ActionNoRange.jpg';
+
+            //Copy the contents of the old image to the new image's path
             copy($imageCopySourceFile, $imageCopyDestFile);
 
+            //Create an image object from the new image's path
             $imageCopy = imagecreatefromjpeg($imageCopyDestFile);
 
+            //Fill in the new image's range box
             $image = $this->actionFillInRange($imageCopy, $element);
+
+            //Write the image object's contents to the destination file path
             imagejpeg($image, $imageCopyDestFile);
         }
 
@@ -173,8 +197,8 @@ class CreateTemplatesTest extends TestCase
 
     function /*test*/CreateEnchantmentNoRange(){
         foreach($this->elements as $element){
-            $imageCopySourceFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
-            $imageCopyDestFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentNoRange.jpg';
+            $imageCopySourceFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentRange.jpg';
+            $imageCopyDestFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$element->getName().'EnchantmentNoRange.jpg';
             copy($imageCopySourceFile, $imageCopyDestFile);
 
             $imageCopy = imagecreatefromjpeg($imageCopyDestFile);
@@ -186,6 +210,15 @@ class CreateTemplatesTest extends TestCase
         $this->assertTrue(true);
     }
 
+    /**
+     *
+     * @param $image
+     * The image being filled in
+     * @param $element
+     * The element of the image being filled in
+     * @return mixed
+     * The filled-in image object
+     */
     function actionFillInRange($image, $element){
         for($i = $this->actionRangeBoxStartX; $i < $this->actionRangeBoxEndX; $i++){
             for($j = $this->actionRangeBoxStartY; $j < $this->actionRangeBoxEndY; $j++){
@@ -196,6 +229,15 @@ class CreateTemplatesTest extends TestCase
         return $image;
     }
 
+    /**
+     *
+     * @param $image
+     * The image being filled in
+     * @param $element
+     * The element of the image being filled in
+     * @return mixed
+     * The filled-in image object
+     */
     function enchantmentFillInRange($image, $element){
         for($i = $this->enchantmentRangeBoxStartX; $i < $this->enchantmentRangeBoxEndX; $i++){
             for($j = $this->enchantmentRangeBoxStartY; $j < $this->enchantmentRangeBoxEndY; $j++){

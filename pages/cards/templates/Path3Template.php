@@ -48,7 +48,7 @@ class Path3Template extends Template
     public function __construct($card){
         $this->card = $card;
 
-        $this->fontFile = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/fonts/times.ttf';
+        $this->fontFile = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/fonts/times.ttf';
 
         $this->nameFontSize = 14;
         $this->nameX = 26;
@@ -76,7 +76,7 @@ class Path3Template extends Template
         $this->textYBottom = 340;
         $this->textFontSize = 18;
 
-        $this->template = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/templates/templateImages/'.$card->getElement()->getName().get_class($card).'3.jpg';
+        $this->template = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/templates/templateImages/'.$card->getElement()->getName().get_class($card).'3.jpg';
 
     }
 

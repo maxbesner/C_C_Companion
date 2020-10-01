@@ -1,6 +1,6 @@
 <?php
 require_once('AbstractDAO.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/Character.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/Character.php');
 include_once('QuestionsDAO.php');
 
 class CharacterDAO extends abstractDAO
@@ -20,6 +20,7 @@ class CharacterDAO extends abstractDAO
     }
 
 
+    //Inserts character into the database and updates the associated character object with its database id
     public function addCharacter($userid, $character)
     {
         $insertQuery = 'INSERT INTO character_builder_character (character_name, age, gender, description, userid) VALUES (?,?,?,?,?)';
@@ -74,6 +75,7 @@ class CharacterDAO extends abstractDAO
         return false;
     }
 
+    //Inserts character into the archive. Used when deleting characters from the active character table
     public function archiveCharacters($userid)
     {
         $insertQuery = 'INSERT INTO character_archive SELECT * FROM character_builder_character WHERE userid = ?';
@@ -84,6 +86,7 @@ class CharacterDAO extends abstractDAO
         $this->questionsDAO->archiveQuestions($userid);
     }
 
+    //Removes all characters from the active character table
     public function deleteCharacters($userid)
     {
         if (!$this->mysqli->connect_errno) {
@@ -103,6 +106,7 @@ class CharacterDAO extends abstractDAO
             return false;
         }
     }
+
 
     public function updateCharacter($character)
     {

@@ -1,7 +1,7 @@
 <?php
 
 require_once('AbstractDAO.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/Character.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/Character.php');
 
 
 class QuestionsDAO extends AbstractDAO
@@ -15,6 +15,7 @@ class QuestionsDAO extends AbstractDAO
         }
     }
 
+    //Set  types of questions in character
     public function getQuestions($character)
     {
         $characterId = $character->getId();

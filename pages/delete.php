@@ -1,8 +1,8 @@
 <?php
 
 include_once('SessionManager.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
-require_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/UserDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/dao/UserDAO.php');
 
 session_start();
 

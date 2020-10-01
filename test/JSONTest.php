@@ -1,5 +1,6 @@
 <?php
 
+include_once ($_SERVER['DOCUMENT_ROOT'].'/C&C_Companion/pages/cards/Card.php');
 
 use PHPUnit\Framework\TestCase;
 
@@ -18,13 +19,17 @@ class JSONTest extends TestCase
 
     function testMakeJSON(){
 
-        $file =$_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cards.json';
+        //The directory of the file being written to
+        $file = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.json';
 
+        //Clear file contents and set current file text string to be equa to it
         file_put_contents($file, "");
         $current = file_get_contents($file);
 
         $current.= "[\n";
 
+        //Check whether the first object has been encoded so that only the first object
+        //has no comma in front of it
         $started = false;
         foreach($this->cards as $card){
             if($started){
@@ -38,6 +43,7 @@ class JSONTest extends TestCase
 
         $current.= "\n]";
 
+        //Set the file's contents to be equal to the constructed string
         file_put_contents($file, $current);
 
         $this->assertTrue(true);
@@ -45,9 +51,9 @@ class JSONTest extends TestCase
 
 
 
-    function /*test*/DecodeJSON(){
+    function testDecodeJSON(){
 
-        $file =$_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cards.json';
+        $file =$_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.json';
 
         $current = file_get_contents($file);
 

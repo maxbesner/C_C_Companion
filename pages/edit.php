@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/Character.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/Character.php');
 
 session_start();
 
@@ -12,6 +12,6 @@ $_SESSION['questions'] = $questions;
 
 $_SESSION['edit'] = "true";
 
-header('Location:./quiz/quizBasicInfo.php?newQuiz=false');
+header('Location:quizBasicInfo.php?newQuiz=false');
 
 #todo prevent double submission of characters

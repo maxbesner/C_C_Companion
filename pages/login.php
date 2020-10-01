@@ -1,7 +1,9 @@
 <?php
-    require_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/user/User.php');
+    require_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
 
     session_start();
+
+    //redirect user to homepage if already logged in
     if(isset($_SESSION['user']))
     {
         if($_SESSION['user']->isAuthenticated())
@@ -10,6 +12,8 @@
             header('Location:index.php');
         }
     }
+
+    //If there are no missing fields, create a new User, add them to the session, and redirect to homepage
     $missingFields = false;
     if(isset($_POST['submit']))
     {
@@ -37,11 +41,13 @@
     $page_title="Login";
     include_once('header.php');
 
+    //If there are missing fields, indicate that user must enter both
     if($missingFields)
     {
         echo '<h3 style="color:red;">Please enter both a username and a password</h3>';
     }
 
+    //If user does not exist in records, login fails
     if(isset($user))
     {
         if(!$user->isAuthenticated())

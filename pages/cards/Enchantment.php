@@ -1,7 +1,7 @@
 <?php
 
 include_once('Card.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/Subtyped.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/Subtyped.php');
 
 class Enchantment extends Card implements JsonSerializable, Subtyped
 {

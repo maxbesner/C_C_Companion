@@ -1,8 +1,8 @@
 <?php
 
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/quiz/Questions.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/CharacterDAO.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/dao/QuestionsDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/quiz/Questions.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/dao/CharacterDAO.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/dao/QuestionsDAO.php');
 
 
 class Character
@@ -143,6 +143,7 @@ class Character
     {
         return $this->elements;
     }
+
     public function resetScores()
     {
         $this->scores = array();
@@ -154,6 +155,7 @@ class Character
         }
     }
 
+    //Returns the sum of all elemental scores
     private function updateTotal()
     {
         foreach($this->scores as $score)
@@ -167,6 +169,7 @@ class Character
         return $this->total;
     }
 
+    //Returns the percentage score of the corresponding element relative to the sum of all element scores
     public function getPercentage($element)
     {
         if($this->total != 0)
@@ -182,6 +185,7 @@ class Character
     {
         $this->resetScores();
 
+        //Add a score equal to the value of the question to the corresponding element score
         foreach($this->answers->getSliderQuestions() as $question)
         {
             foreach($this->elements as $element)
@@ -192,6 +196,8 @@ class Character
                 }
             }
         }
+
+        //Add a score of 5.5 to the corresponding element score if question was answered yes
         foreach($this->answers->getYesOrNoQuestions() as $question)
         {
             foreach($this->elements as $element)
@@ -202,6 +208,8 @@ class Character
                 }
             }
         }
+
+        //If a character has a trait, add a score of 5.5 to the element score corresponding to the trait
         foreach($this->getTraits() as $trait)
         {
             foreach($this->elements as $element)

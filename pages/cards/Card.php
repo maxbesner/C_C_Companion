@@ -7,8 +7,8 @@ include_once('Step.php');
 include_once('Summon.php');
 include_once('SummonAction.php');
 
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/ElementList.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/Element.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/ElementList.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Element.php');
 
 class Card
 {
@@ -38,7 +38,7 @@ class Card
 
         $cards = array();
 
-        $f = $_SERVER["DOCUMENT_ROOT"].'/CharacterBuilder/pages/cards/cards.txt';
+        $f = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.txt';
         $file = fopen($f, "r") or die("Unable to open file");
 
         while(!feof($file))
@@ -49,6 +49,7 @@ class Card
             $name = trim(fgets($file));
             $art = trim(fgets($file));
             $cost = trim(fgets($file));
+            //Load an element object corresponding to its name
             $element = $elementList->getElement(trim(fgets($file)));
             $rarity = trim(fgets($file));
 
@@ -57,6 +58,7 @@ class Card
             $clause = trim(fgets($file));
 
             while($clause != "End") {
+                //Add text to array of lines, and add array of lines to array of clauses
                 $clauseArray = array();
                 $clauseArray[] = $clause;
                 $textClauses[] = $clauseArray;
@@ -98,15 +100,13 @@ class Card
 
 
                         while($line != "End"){
-
+                            //Add line to array of lines
                             $clause = array($line);
-
                             $subtext[] = $clause;
-
                             $line = trim(fgets($file));
                         }
 
-
+                        //Create a step object for each unit of step data
                         $steps[$number] = new Step($elementList->getElement($stepElement), $subtext);
 
                         $number = trim(fgets($file));
@@ -127,10 +127,9 @@ class Card
 
                     while($line != "End"){
 
+                        //Add line to array of lines
                         $clause = array($line);
-
                         $subtext[] = $clause;
-
                         $line = trim(fgets($file));
                     }
 
