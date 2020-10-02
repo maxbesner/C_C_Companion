@@ -7,8 +7,8 @@ include_once('Step.php');
 include_once('Summon.php');
 include_once('SummonAction.php');
 
-include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/ElementList.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Element.php');
+include_once($_SERVER["DOCUMENT_ROOT"] . '/C&C_Companion/pages/ElementList.php');
+include_once($_SERVER["DOCUMENT_ROOT"] . '/C&C_Companion/pages/Element.php');
 
 class Card
 {
@@ -21,7 +21,8 @@ class Card
     private $text;
     protected $rangeType;
 
-    public function __construct($id, $name, $art, $cost, $element, $rarity, $text){
+    public function __construct($id, $name, $art, $cost, $element, $rarity, $text)
+    {
         $this->setId($id);
         $this->setName($name);
         $this->setArt($art);
@@ -30,19 +31,21 @@ class Card
         $this->setRarity($rarity);
         $this->setText($text);
         $this->rangeType = "None";
+
     }
 
-    public static function loadCardsFromFile(){
+    public static function loadCardsFromFile()
+    {
 
         $elementList = new ElementList();
 
+
         $cards = array();
 
-        $f = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.txt';
+        $f = $_SERVER["DOCUMENT_ROOT"] . '/C&C_Companion/pages/cards/cards.txt';
         $file = fopen($f, "r") or die("Unable to open file");
 
-        while(!feof($file))
-        {
+        while (!feof($file)) {
             $type = trim(fgets($file));
 
             $id = trim(fgets($file));
@@ -57,7 +60,7 @@ class Card
 
             $clause = trim(fgets($file));
 
-            while($clause != "End") {
+            while ($clause != "End") {
                 //Add text to array of lines, and add array of lines to array of clauses
                 $clauseArray = array();
                 $clauseArray[] = $clause;
@@ -66,7 +69,7 @@ class Card
             }
 
 
-            switch($type){
+            switch ($type) {
                 case "Action":
                     $subtype = trim(fgets($file));
                     $range = trim(fgets($file));
@@ -76,7 +79,7 @@ class Card
                 case "Enchantment":
                     $subtype = trim(fgets($file));
                     $range = trim(fgets($file));
-                    if(!is_numeric($range) && $range != "null"){
+                    if (!is_numeric($range) && $range != "null") {
                         $range = new AreaOfEffect($range, null);
                     }
                     $hp = trim(fgets($file));
@@ -85,21 +88,21 @@ class Card
                     break;
                 case "Path":
 
-                    $steps = Array();
+                    $steps = array();
 
                     $number = trim(fgets($file));
 
-                    while($number != "Stop"){
+                    while ($number != "Stop") {
 
                         $stepElement = trim(fgets($file));
 
 
-                        $subtext  = array();
+                        $subtext = array();
 
                         $line = trim(fgets($file));
 
 
-                        while($line != "End"){
+                        while ($line != "End") {
                             //Add line to array of lines
                             $clause = array($line);
                             $subtext[] = $clause;
@@ -120,12 +123,12 @@ class Card
                     $range = trim(fgets($file));
                     $subtype = trim(fgets($file));
 
-                    $subtext  = array();
+                    $subtext = array();
 
                     $line = trim(fgets($file));
 
 
-                    while($line != "End"){
+                    while ($line != "End") {
 
                         //Add line to array of lines
                         $clause = array($line);
@@ -141,7 +144,7 @@ class Card
             }
 
 
-        fgets($file);
+            fgets($file);
         }
 
         fclose($file);
@@ -149,65 +152,132 @@ class Card
         return $cards;
     }
 
-    public function setId($id){
+    public static function loadCardsFromJSON($fileName)
+    {
+
+        $elementList = new ElementList();
+
+        $cardsJSON = json_decode(file_get_contents($fileName));
+
+        $cards = array();
+
+        foreach ($cardsJSON as $cardJSON) {
+            $type = substr($cardJSON->{'id'}, 0, 1);
+
+            $element = $elementList->getElement($cardJSON->{'element'});
+
+            switch ($type) {
+                case "A":
+                    $cards[$cardJSON->{'id'}] = new Action($cardJSON->{'id'}, $cardJSON->{'name'}, $cardJSON->{'art'}, $cardJSON->{'cost'}, $element, $cardJSON->{'rarity'}, $cardJSON->{'text'}, $cardJSON->{'subtype'}, $cardJSON->{'range'});
+                    break;
+                case "E":
+                    $cards[$cardJSON->{'id'}] = new Enchantment($cardJSON->{'id'}, $cardJSON->{'name'}, $cardJSON->{'art'}, $cardJSON->{'cost'}, $element, $cardJSON->{'rarity'}, $cardJSON->{'text'}, $cardJSON->{'subtype'}, $cardJSON->{'range'}, $cardJSON->{'hp'});
+                    break;
+                case "P":
+                    $stepsJSON = $cardJSON->{'steps'};
+                    $steps = array();
+                    $i = 1;
+                    while (true) {
+                        try{
+                            $stepJSON = $stepsJSON->{$i};
+                            $steps[$i] = new Step($elementList->getElement($stepJSON->{'element'}), $stepJSON->{'text'});
+                            $i++;
+                        }catch(Exception $e){
+                            echo $cardJSON->{'id'}.": ".$e->getMessage()."\n";
+                            break;
+                        }
+
+                    }
+                    $cards[$cardJSON->{'id'}] = new Path($cardJSON->{'id'}, $cardJSON->{'name'}, $cardJSON->{'art'}, $cardJSON->{'cost'}, $element, $cardJSON->{'rarity'}, "",$steps);
+
+            }
+        }
+        return $cards;
+    }
+
+    private function createStepsFromJSON($stepsJSON)
+    {
+        $steps = array();
+        foreach ($stepsJSON as $stepJSON) {
+
+        }
+    }
+
+
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function setArt($art){
-            $this->art = $art;
+    public function setArt($art)
+    {
+        $this->art = $art;
     }
 
-    public function getArt(){
+    public function getArt()
+    {
         return $this->art;
     }
 
-    public function setCost($cost){
-            $this->cost = $cost;
+    public function setCost($cost)
+    {
+        $this->cost = $cost;
     }
 
-    public function getCost(){
+    public function getCost()
+    {
         return $this->cost;
     }
 
-    public function setElement($element){
+    public function setElement($element)
+    {
         $this->element = $element;
     }
 
-    public function getElement(){
+    public function getElement()
+    {
         return $this->element;
     }
 
-    public function setRarity($rarity){
+    public function setRarity($rarity)
+    {
         $this->rarity = $rarity;
     }
 
-    public function getRarity(){
+    public function getRarity()
+    {
         return $this->rarity;
     }
 
-    public function setText($text){
+    public function setText($text)
+    {
         $this->text = $text;
     }
 
 
-    public function getText(){
+    public function getText()
+    {
         return $this->text;
     }
 
 
-    public function rangeType(){
+    public function rangeType()
+    {
         return $this->rangeType;
     }
 

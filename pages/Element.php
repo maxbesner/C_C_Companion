@@ -61,5 +61,4 @@ class Element
         return $name == $this->getName();
     }
 
-
 }

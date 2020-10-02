@@ -227,31 +227,15 @@
 
 	{"id":"E28","name":"Iron Maiden","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["Afflicted player can't move"],["This Affliction can be attacked by the player it enchants"]],"range":"1","subtype":"\"Armor Affliction\"","hp":"3"},
 
-	{"id":"P1","name":"Path of Molten Metal","art":"null","cost":"5","element":"Copper","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Take 2 damage\"]]},\"2\":{\"element\":{},\"text\":[[\"Discard a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Your next 3 attacks this turn deal +2 damage\"]]}}"},
+	{"id":"P1","name":"Path of Molten Metal","art":"null","cost":"5","element":"Copper","rarity":"Common","text":[["null"]],"steps":{"1":{"element":"Copper","text":[["Take 2 damage"]]},"2":{"element":"Copper","text":[["Discard a card"]]},"3":{"element":"Copper","text":[["Your next 3 attacks this turn deal +2 damage"]]}}},
 
-	{"id":"P2","name":"Path of Victorious Visions","art":"null","cost":"5","element":"Gold","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Mark an enemy of your choice\"]]},\"2\":{\"element\":{},\"text\":[[\"You gain an initiative token\"]]},\"3\":{\"element\":{},\"text\":[[\"All marked enemies take +2 damage until end of turn\"]]}}"},
+	{"id":"P2","name":"Path of Victorious Visions","art":"null","cost":"5","element":"Gold","rarity":"Common","text":[["null"]],"steps":{"1":{"element":"Gold","text":[["Mark an enemy of your choice"]]},"2":{"element":"Gold","text":[["You gain an initiative token"]]},"3":{"element":"Gold","text":[["All marked enemies take +2 damage until end of turn"]]}}},
 
-	{"id":"P3","name":"Path of Frivolous Fancies","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Draw a card\"]]},\"2\":{\"element\":{},\"text\":[[\"Draw a card\"]]},\"3\":{\"element\":{},\"text\":[[\"Deal damage to target equal to the number of cards in your hand (Range 2)\"]]}}"},
+	{"id":"P3","name":"Path of Frivolous Fancies","art":"null","cost":"5","element":"Mercury","rarity":"Common","text":[["null"]],"steps":{"1":{"element":"Mercury","text":[["Draw a card"]]},"2":{"element":"Mercury","text":[["Draw a card"]]},"3":{"element":"Mercury","text":[["Deal damage to target equal to the number of cards in your hand (Range 2)"]]}}},
 
-	{"id":"P4","name":"Path of Consummate Care","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Up to one ally gains 2 movement tokens\"]]},\"2\":{\"element\":{},\"text\":[[\"Up to one different ally gains 2 movement tokens\"]]},\"3\":{\"element\":{},\"text\":[[\"Heal all adjacent allies 4 HP\"]]}}"},
+	{"id":"P4","name":"Path of Consummate Care","art":"null","cost":"5","element":"Calcium","rarity":"Common","text":[["null"]],"steps":{"1":{"element":"Calcium","text":[["Up to one ally gains 2 movement tokens"]]},"2":{"element":"Calcium","text":[["Up to one different ally gains 2 movement tokens"]]},"3":{"element":"Calcium","text":[["Heal all adjacent allies 4 HP"]]}}},
 
-	{"id":"P5","name":"Path of Leery Lurkings","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Heal 3 HP\"]]},\"2\":{\"element\":{},\"text\":[[\"Deal 2 damage (Range 3)\"]]},\"3\":{\"element\":{},\"text\":[[\"Deal 3 damage (Range 5)\"]]}}"},
+	{"id":"P5","name":"Path of Leery Lurkings","art":"null","cost":"5","element":"Lead","rarity":"Common","text":[["null"]],"steps":{"1":{"element":"Lead","text":[["Heal 3 HP"]]},"2":{"element":"Lead","text":[["Deal 2 damage (Range 3)"]]},"3":{"element":"Lead","text":[["Deal 3 damage (Range 5)"]]}}},
 
-	{"id":"P6","name":"Path of Staunch Stances","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["null"]],"steps":"{\"1\":{\"element\":{},\"text\":[[\"Create an Iron Terrain (Range 1)\"]]},\"2\":{\"element\":{},\"text\":[[\"Pull 3 (Range 3)\"]]},\"3\":{\"element\":{},\"text\":[[\"Deal 5 damage (Range 1)\"]]}}"},
-
-	{},
-
-	{},
-
-	{},
-
-	{},
-
-	{},
-
-	{},
-
-	{},
-
-	{}
+	{"id":"P6","name":"Path of Staunch Stances","art":"null","cost":"5","element":"Iron","rarity":"Common","text":[["null"]],"steps":{"1":{"element":"Iron","text":[["Create an Iron Terrain (Range 1)"]]},"2":{"element":"Iron","text":[["Pull 3 (Range 3)"]]},"3":{"element":"Iron","text":[["Deal 5 damage (Range 1)"]]}}}
 ]

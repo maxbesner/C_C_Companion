@@ -11,8 +11,6 @@ class JSONTest extends TestCase
 
     function setUp(){
         $this->cards = Card::loadCardsFromFile();
-
-
     }
 
 
@@ -32,6 +30,10 @@ class JSONTest extends TestCase
         //has no comma in front of it
         $started = false;
         foreach($this->cards as $card){
+            if(get_class($card) == "Summon"){
+                continue;
+            }
+
             if($started){
                 $current .= ",\n\n\t".json_encode($card);
             }else{
@@ -53,13 +55,9 @@ class JSONTest extends TestCase
 
     function testDecodeJSON(){
 
-        $file =$_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.json';
+        $cards = Card::loadCardsFromJSON($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.json');
 
-        $current = file_get_contents($file);
-
-        var_dump(json_decode($current));
-
-        $this->assertTrue(true);
+        $this->assertTrue($cards["P1"]->getSteps()["1"]->getElement()->getName() == "Copper");
     }
 
 }
