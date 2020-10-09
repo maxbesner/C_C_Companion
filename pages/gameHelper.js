@@ -31,8 +31,7 @@ function removeFromInitiative(playerId) {
 }
 
 function newTurn() {
-    alert("Boop");
-    /*
+
     if (players.size === 0) return;
 
     nonInitiative = shuffle(nonInitiative);
@@ -41,7 +40,7 @@ function newTurn() {
 
     writeTurnOrder(turnOrder)
 
-    writeInitiative(initiative);*/
+    writeInitiative(initiative);
 }
 
 function writeTurnOrder(turnOrder) {
