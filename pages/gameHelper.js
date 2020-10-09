@@ -5,7 +5,6 @@ let initiative = [];
 let nonInitiative = [];
 
 function start() {
-
     setPlayers();
     newTurn();
 }
