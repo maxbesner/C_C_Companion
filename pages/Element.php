@@ -1,7 +1,7 @@
 <?php
 
 
-class Element
+class Element implements JsonSerializable
 {
     private $name;
     private $symbol;
@@ -59,6 +59,11 @@ class Element
     public function equals($name)
     {
         return $name == $this->getName();
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->getName();
     }
 
 }

@@ -2,7 +2,7 @@
 
 
 
-class Step
+class Step implements JsonSerializable
 {
     private $element;
     private $text;
@@ -26,6 +26,15 @@ class Step
 
     public function getText(){
         return $this->text;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            "text" => $this->getText(),
+            "element" => $this->getElement()->jsonSerialize()
+        ];
+
     }
 
 }

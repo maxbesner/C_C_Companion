@@ -44,6 +44,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="gameHelper.php">Game Companion</a>
+                                <a class="dropdown-item" href="gameSpace.php">Game Space</a>
                                 <a class="dropdown-item" href="cards.php">Cards</a>
                             </div>
                         </li>

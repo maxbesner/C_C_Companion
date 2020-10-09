@@ -27,15 +27,16 @@ class Path extends Card implements JsonSerializable
         for($i = 1 ; $i <= count($this->getSteps()); $i++){
             $step = $this->getSteps()[$i];
 
-            $array['steps'][$i] =
-               [
-                    "element" => $step->getElement()->getName(),
-                    "text" => $step->getText()
-               ];
+            $array['steps'][$i] = $step->jsonSerialize();
+
 
         }
 
+
         return $array;
+
+        /*"element" => $step->getElement()->getName(),
+                    "text" => $step->getText()*/
     }
 
 }

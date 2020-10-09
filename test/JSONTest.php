@@ -58,6 +58,8 @@ class JSONTest extends TestCase
         $cards = Card::loadCardsFromJSON($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/cards/cards.json');
 
         $this->assertTrue($cards["P1"]->getSteps()["1"]->getElement()->getName() == "Copper");
+        $this->assertTrue($cards["P1"]->getSteps()["1"]->getText()[0][0] == "Take 2 damage");
+
     }
 
 }
