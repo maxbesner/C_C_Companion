@@ -32,15 +32,17 @@ function removeFromInitiative(playerId) {
 }
 
 function newTurn() {
+    alert("Boop");
+    /*
     if (players.size === 0) return;
 
-    let turnOrder = mergeArrays(initiative, shuffle(nonInitiative));
+    nonInitiative = shuffle(nonInitiative);
+
+    let turnOrder = mergeArrays(initiative.splice(0), nonInitiative);
 
     writeTurnOrder(turnOrder)
 
-    initiative = [];
-
-    writeInitiative(initiative);
+    writeInitiative(initiative);*/
 }
 
 function writeTurnOrder(turnOrder) {
