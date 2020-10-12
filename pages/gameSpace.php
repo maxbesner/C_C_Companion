@@ -1,8 +1,8 @@
 <?php
 
 include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/SessionManager.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/Character.php');
 include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
-include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Player.php');
 
 $sessionManager = new SessionManager();
 
@@ -28,6 +28,8 @@ $hand = array();
 <?php writeEmptyCardSpaces($deck); ?>
 <img id="deck" src="" alt="emptyDeck">
 <img id="discardPile" src="" alt="discardPile" hidden>
+
+<button id="test" onclick="test()">Test</button>
 
 <?php
 

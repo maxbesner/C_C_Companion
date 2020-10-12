@@ -3,6 +3,10 @@
 include_once ($_SERVER['DOCUMENT_ROOT'].'/C&C_Companion/pages/cards/Card.php');
 class DeckManager
 {
+    private $id;
+
+    private $name;
+
     private $allCards = array();
 
     private $cardPool = array();
@@ -11,8 +15,25 @@ class DeckManager
 
     private $hand = array();
 
-    function __construct(){
+    function __construct($id){
         $this->allCards = Card::loadCardsFromFile();
+        $this->setId($id);
+    }
+
+    public function setId($id){
+        $this->id= $id;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function setName($name){
+        $this->name= $name;
+    }
+
+    public function getName(){
+        return $this->name;
     }
 
     public function setCardPool($cardPool){

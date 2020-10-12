@@ -1,6 +1,8 @@
 <?php
 
 include_once('./quiz/Questions.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
+
 include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/Character.php');
 
 session_start();

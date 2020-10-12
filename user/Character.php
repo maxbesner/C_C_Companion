@@ -23,6 +23,8 @@ class Character
 
     private $elements = Array("Gold", "Copper", "Iron", "Calcium", "Lead", "Mercury");
 
+    private $decks;
+
     public function __construct($name)
     {
         $this->characterDao = new CharacterDAO();
@@ -238,5 +240,35 @@ class Character
         {
             $this->setDescription($description);
         }
+    }
+
+    public function addToDecks($deck){
+        $this->decks[$deck->getId()] = $deck;
+    }
+
+    public function getDecks(){
+        return $this->decks;
+    }
+
+    public function getDeckIds(){
+
+        $deckIds = array();
+
+        foreach($this->decks as $deck){
+            $deckIds[] = $deck->getId();
+        }
+
+        return $deckIds();
+    }
+
+    public function getDeckNames(){
+
+        $deckNamess = array();
+
+        foreach($this->decks as $deck){
+            $deckNamess[] = $deck->getName();
+        }
+
+        return $deckNames();
     }
 }

@@ -122,3 +122,24 @@ function resetSpace(){
     markupDiscard();
     markupDeck();
 }
+
+function test(){
+    $.ajax({
+        url:"test.php", //the page containing php script
+        type: "POST", //request type
+        success:function(result){
+            $("#test").text(result);
+            alert(result);
+        }
+    });
+}
+
+function foo() {
+    $.ajax({
+        url:"test.php", //the page containing php script
+        type: "POST", //request type
+        success:function(result){
+            alert(result);
+        }
+    });
+}

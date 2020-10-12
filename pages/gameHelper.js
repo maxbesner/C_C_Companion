@@ -34,13 +34,12 @@ function newTurn() {
 
     if (players.size === 0) return;
 
-    nonInitiative = shuffle(nonInitiative);
-
-    let turnOrder = mergeArrays(initiative.splice(0), nonInitiative);
+    let turnOrder = mergeArrays(initiative.splice(0), shuffle(nonInitiative));
 
     writeTurnOrder(turnOrder)
-
     writeInitiative(initiative);
+
+    nonInitiative = turnOrder;
 }
 
 function writeTurnOrder(turnOrder) {
@@ -201,4 +200,6 @@ function decrementHP(playerId) {
         document.getElementById(playerId + "hp").value = hp;
     }
 }
+
+
 
