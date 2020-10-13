@@ -27,5 +27,6 @@ function createDeckDropdown(characterId, characterName){
 }
 
 function updateButtonHeader(buttonId, text){
-    document.getElementById(buttonId).textContent = text;
+    alert(text);
+    //document.getElementById(buttonId).textContent = text;
 }
