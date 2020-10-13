@@ -1,24 +1,33 @@
-function createDeckDropdown(characterId){
-    let characterDecks = decksByCharacterId.get(characterId);
+function createDeckDropdown(characterId, characterName){
+
+    characterDecks = decksByCharacterId.get(characterId);
     let deckDropdownHTML = "";
-    let deckIdentifier;
-    for(characterDeck in characterDecks){
+    let deckIdentifier = "";
+    for(let i = 0; i < characterDecks.length; i++){
+
+        characterDeck = characterDecks[i];
+
         deckIdentifier = characterDeck.id;
 
-        if(characterDeck.name !== null){
+        if(characterDeck.name != null){
             deckIdentifier += ": " + characterDeck.name;
         }
 
-        deckDropdownMenuHTML += '<a id="deck' + characterDeck.id + '" class="dropdown-item" onclick="updateDropdownHeader(' + deckIndentifier + ')">' + deckIdentifier + '</a>';
+        deckDropdownMenuButton = "deckDropdownMenuButton";
+
+        deckDropdownHTML += "<a id=\"deck"+ characterDeck.id + "\" class=\"dropdown-item\" onclick=\"updateDropdownHeader(\"" +  deckDropdownMenuButton + "\", \"" + deckIdentifier + "\")\">" + deckIdentifier + "</a>\n";
 
     }
 
     alert(deckDropdownHTML);
+
+    /*updateButtonHeader("characterDropdownMenuButton", characterId + ": " + characterName);
     document.getElementById("deckDropdownMenu").innerHTML = deckDropdownHTML;
-    document.getElementById("deckDropdown").hidden = false;
+    document.getElementById("deckDropdown").hidden = false;*/
 
 }
 
-function updateDropdownHeader(deckIdentifier){
-    document.getElementById("deckDropdownMenuButton").innerHTML = deckIndentifier;
+function updateButtonHeader(buttonId, text){
+    alert(text);
+    /*document.getElementById(buttonId).textContent = text;*/
 }

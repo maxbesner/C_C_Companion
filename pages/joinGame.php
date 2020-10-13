@@ -65,7 +65,7 @@ function writeCharacterDropdownMenu()
 
     ?>
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="characterDropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
             Choose a Character
         </button>
@@ -77,7 +77,7 @@ function writeCharacterDropdownMenu()
                 ?>
                 <a id="character<?php echo $character->getId() ?>"
                    class="dropdown-item"
-                   onclick="createDeckDropdown('<?php echo $character->getId()?>')"><?php echo $character->getId() . ": " . $character->getName() ?></a>
+                   onclick="createDeckDropdown('<?php echo $character->getId()?>', '<?php echo $character->getName()?>')"><?php echo $character->getId() . ": " . $character->getName() ?></a>
                 <?php
             }
 
