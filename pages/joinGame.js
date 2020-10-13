@@ -15,10 +15,9 @@ function createDeckDropdown(characterId, characterName){
 
         deckDropdownMenuButton = "deckDropdownMenuButton";
 
-        deckDropdownHTML += "<a id=\"deck"+ characterDeck.id + "\" class=\"dropdown-item\" onclick=\"updateDropdownHeader(\"" +  deckDropdownMenuButton + "\", \"" + deckIdentifier + "\")\">" + deckIdentifier + "</a>\n";
+        deckDropdownHTML += "<a id=\"deck"+ characterDeck.id + "\" class=\"dropdown-item\" onclick=\"updateButtonHeader(" +  deckDropdownMenuButton + ", " + deckIdentifier + ")\">" + deckIdentifier + "</a>\n";
 
     }
-
 
     updateButtonHeader("characterDropdownMenuButton", characterId + ": " + characterName);
     document.getElementById("deckDropdownMenu").innerHTML = deckDropdownHTML;
@@ -27,6 +26,6 @@ function createDeckDropdown(characterId, characterName){
 }
 
 function updateButtonHeader(buttonId, text){
-    alert(text);
+    alert("boop");
     //document.getElementById(buttonId).textContent = text;
 }
