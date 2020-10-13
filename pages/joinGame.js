@@ -1,6 +1,6 @@
 function createDeckDropdown(characterId){
-    alert(characterId);
-   /* let characterDecks = decksByCharacterId.get(characterId);
+    let characterDecks = decksByCharacterId.get(characterId);
+    let deckDropdownHTML;
     for(characterDeck in characterDecks){
         let deckIdentifier = characterDeck.id;
 
@@ -8,10 +8,13 @@ function createDeckDropdown(characterId){
             deckIdentifier += ": " + characterDeck.name;
         }
 
-        document.getElementById("deckDropdownMenu").innerHTML += '<a id="deck' + characterDeck.id + '" class="dropdown-item" action="updateDropdownHeader(' + deckIndentifier + ')">' + deckIdentifier + '</a>';
+        deckDropdownMenuHTML += '<a id="deck' + characterDeck.id + '" class="dropdown-item" onclick="updateDropdownHeader(' + deckIndentifier + ')">' + deckIdentifier + '</a>';
+
     }
 
-    document.getElementById("deckDropdown").hidden = false;*/
+    alert(deckDropdownHTML);
+    document.getElementById("deckDropdownMenu").innerHTML = deckDropdownHTML;
+    document.getElementById("deckDropdown").hidden = false;
 
 }
 
