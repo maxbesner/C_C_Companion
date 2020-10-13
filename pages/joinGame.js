@@ -1,8 +1,9 @@
 function createDeckDropdown(characterId){
     let characterDecks = decksByCharacterId.get(characterId);
-    let deckDropdownHTML;
+    let deckDropdownHTML = "";
+    let deckIdentifier;
     for(characterDeck in characterDecks){
-        let deckIdentifier = characterDeck.id;
+        deckIdentifier = characterDeck.id;
 
         if(characterDeck.name !== null){
             deckIdentifier += ": " + characterDeck.name;
