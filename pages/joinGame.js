@@ -19,11 +19,10 @@ function createDeckDropdown(characterId, characterName){
 
     }
 
-    alert(deckDropdownHTML);
 
-    /*updateButtonHeader("characterDropdownMenuButton", characterId + ": " + characterName);
+    updateButtonHeader("characterDropdownMenuButton", characterId + ": " + characterName);
     document.getElementById("deckDropdownMenu").innerHTML = deckDropdownHTML;
-    document.getElementById("deckDropdown").hidden = false;*/
+    document.getElementById("deckDropdown").hidden = false;
 
 }
 
