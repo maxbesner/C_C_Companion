@@ -19,7 +19,7 @@ function createDeckDropdown(characterId, characterName){
 
     }
 
-    alert(deckDropdownHTML);
+    alert("boop");
 
     /*updateButtonHeader("characterDropdownMenuButton", characterId + ": " + characterName);
     document.getElementById("deckDropdownMenu").innerHTML = deckDropdownHTML;
