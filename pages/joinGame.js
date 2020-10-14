@@ -15,7 +15,7 @@ function createDeckDropdown(characterId, characterName){
 
         deckDropdownMenuButton = "deckDropdownMenuButton";
 
-        deckDropdownHTML += "<a id=\"deck"+ characterDeck.id + "\" class=\"dropdown-item\" onclick=\"updateButtonHeader(" +  deckDropdownMenuButton + ", " + deckIdentifier + ")\">" + deckIdentifier + "</a>\n";
+        deckDropdownHTML += "<a id=\"deck"+ characterDeck.id + "\" class=\"dropdown-item\" onclick=\"updateButtonHeader('" +  deckDropdownMenuButton + "', '" + deckIdentifier + "')\">" + deckIdentifier + "</a>\n";
 
     }
 
@@ -26,6 +26,39 @@ function createDeckDropdown(characterId, characterName){
 }
 
 function updateButtonHeader(buttonId, text){
-    alert("boop");
-    //document.getElementById(buttonId).textContent = text;
+    document.getElementById(buttonId).textContent = text;
+}
+
+function joinGame(){
+    let characterId = validateAndGetId("character");
+
+    if(characterId == null){
+        return;
+    }
+
+    let deckId = validateAndGetId("deck");
+
+    if(deckId == null){
+        return;
+    }
+
+    let urlString = "joinGameAjax.php?characterId=" + characterId + "&deckId=" + deckId;
+    $.ajax({
+        url:, urlString//the page containing php script
+        type: "GET", //request type
+        success:function(result){
+            alert(result);
+        }
+    });
+}
+
+function validateAndGetId(inputType){
+    let id = document.getElementById(inputType + "DropdownMenuButton").textContent.substr(0, 7);
+
+    if(characterId.charAt(0).toLowerCase() != inputType.charAt(0).toLowerCase()){
+        alert("Please choose a " + inputType);
+        return null;
+    }
+
+    return id;
 }

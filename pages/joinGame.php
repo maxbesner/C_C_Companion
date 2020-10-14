@@ -57,6 +57,10 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/C&C_Companion/pages/header.php');
 
         </div>
 
+        <button class="btn" type="button" id="joinGameButton" onclick="joinGame()">
+            Join Game
+        </button>
+
     </form>
 <?php
 
