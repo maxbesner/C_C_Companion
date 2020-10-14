@@ -29,6 +29,7 @@ function updateButtonHeader(buttonId, text){
     document.getElementById(buttonId).textContent = text;
 }
 
+/*
 function joinGame(){
     let characterId = validateAndGetId("character");
 
@@ -61,4 +62,4 @@ function validateAndGetId(inputType){
     }
 
     return id;
-}
+}*/
