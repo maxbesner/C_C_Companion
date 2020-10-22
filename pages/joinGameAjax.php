@@ -3,22 +3,61 @@
 include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/SessionManager.php');
 include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/User.php');
 include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/Player.php');
-
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/Character.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/user/DeckManager.php');
 session_start();
 
 $characters = $_SESSION['user']->getCharacters();
 
-$character = $characters[binarySearch($_GET['characterId'], $characters)];
+$character = $characters[linearSearch($_GET['characterId'], $characters)];
 
 $_SESSION['character'] = $character;
 
-$decks = $character->getDecks();
+$jsonArray = createJSONArray($character);
 
-$_SESSION['deck'] = $decks[binarySearch($_GET['deckId'], $decks)];
+writeJSONFile($jsonArray);
 
-echo "boop";
+echo true;
 
-header('Location:gameSpace.php');
+
+
+
+
+
+
+function writeJSONFile($jsonArray){
+
+    $file = $_SERVER["DOCUMENT_ROOT"].'/C&C_Companion/pages/player.json';
+
+    file_put_contents($file, "");
+
+    $current.= "[\n".json_encode($jsonArray)."\n]";
+
+    file_put_contents($file, $current);
+
+}
+
+function createJSONArray($character){
+
+    $decks = $character->getDecks();
+
+    $array = {
+        'name' => $character->getName();
+        'deck' => $decks[linearSearch($_GET['deckId'], $decks)];
+    }
+}
+
+function linearSearch($id, $array){
+
+    foreach($array as $object){
+
+        if($object->getId() == $id){
+            return array_keys($array, $object)[0];
+        }
+    }
+
+    return null;
+}
 
 function binarySearch($id, $array) {
 

@@ -21,6 +21,7 @@ class CharacterDAO extends abstractDAO
 
 
     //Inserts character into the database and updates the associated character object with its database id
+    //TODO Update character id to be C######;
     public function addCharacter($userid, $character)
     {
         $insertQuery = 'INSERT INTO character_builder_character (character_name, age, gender, description, userid) VALUES (?,?,?,?,?)';

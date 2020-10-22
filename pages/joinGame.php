@@ -12,6 +12,8 @@ $sessionManager->requireLogin();
 
 $characters = $_SESSION['user']->getCharacters();
 
+$characters[65]->setId("C000001");
+
 
 include_once($_SERVER["DOCUMENT_ROOT"] . '/C&C_Companion/pages/header.php');
 
@@ -96,20 +98,15 @@ include_once($_SERVER["DOCUMENT_ROOT"] . '/C&C_Companion/pages/footer.php');
 
 function createAndAddTestDecks($character)
 {
-    $testDeck1 = new DeckManager("D1");
+    $testDeck1 = new DeckManager("D000001");
     $testDeck1->setName("Super Deck");
 
-    $testDeck2 = new DeckManager("D2");
+    $testDeck2 = new DeckManager("D000002");
     $testDeck2->setName(null);
 
     $character->addToDecks($testDeck1);
     $character->addToDecks($testDeck2);
 
     return $character;
-}
-
-function p(){
-    alert(decksByCharacterId("<?php echo $characters[0]->getId()?>")[0].name);
-
 }
 
